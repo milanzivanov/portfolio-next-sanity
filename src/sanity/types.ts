@@ -319,29 +319,67 @@ export type AllSanitySchemaTypes = Skill | Project | Author | Category | BlockCo
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {    _id,    _createdAt,    title,    "slug": slug.current,    "image": mainImage.asset->url,  }
+// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {_id, title, slug  }
 export type PROJECTS_QUERYResult = Array<{
   _id: string;
-  _createdAt: string;
   title: string | null;
-  slug: string | null;
-  image: string | null;
+  slug: Slug | null;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project" && slug.current == $slug][0] {    _id,    _createdAt,    title,    "slug": slug.current,    "image": mainImage.asset->url,  }
+// Query: *[_type == "project" && slug.current == $slug][0] {   title, body, mainImage  }
 export type PROJECT_QUERYResult = {
-  _id: string;
-  _createdAt: string;
   title: string | null;
-  slug: string | null;
-  image: string | null;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "\n  *[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n    _id,\n    _createdAt,\n    title,\n    \"slug\": slug.current,\n    \"image\": mainImage.asset->url,\n  }\n": PROJECTS_QUERYResult;
-    "\n  *[_type == \"project\" && slug.current == $slug][0] {\n    _id,\n    _createdAt,\n    title,\n    \"slug\": slug.current,\n    \"image\": mainImage.asset->url,\n  }\n": PROJECT_QUERYResult;
+    "\n  *[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n_id, title, slug\n  }\n": PROJECTS_QUERYResult;
+    "\n  *[_type == \"project\" && slug.current == $slug][0] {\n   title, body, mainImage\n  }\n": PROJECT_QUERYResult;
   }
 }
