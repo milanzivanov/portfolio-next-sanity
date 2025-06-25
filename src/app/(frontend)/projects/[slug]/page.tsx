@@ -1,9 +1,13 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
+
+import { PortableText } from "next-sanity";
+import Link from "next/link";
 import Image from "next/image";
+
+import { components } from "@/sanity/portableTextComponents";
 
 export default async function Page({
   params
@@ -36,6 +40,11 @@ export default async function Page({
         />
       ) : null}
       <h1 className="text-4xl font-bold text-balance">{project?.title}</h1>
+      {project?.body ? (
+        <div className="prose max-w-4xl">
+          <PortableText value={project.body} components={components} />
+        </div>
+      ) : null}
       <hr />
       <Link href="/projects">&larr; Return to projects</Link>
     </main>
