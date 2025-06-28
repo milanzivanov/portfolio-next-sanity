@@ -319,15 +319,107 @@ export type AllSanitySchemaTypes = Skill | Project | Author | Category | BlockCo
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {_id, title, slug  }
+// Query: *[_type == "project" && defined(slug.current)] | order(publishedAt desc) {  _id,  title,  slug,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  },      "technologies": technologies[]->{      _id,      name,      slug,      icon,      level,      category,      description,      yearsExperience    }  }
 export type PROJECTS_QUERYResult = Array<{
   _id: string;
   title: string | null;
   slug: Slug | null;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+  categories: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+  technologies: Array<{
+    _id: string;
+    name: string | null;
+    slug: Slug | null;
+    icon: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+    level: "Beginner" | "Expert" | "Intermediate" | null;
+    category: string | null;
+    description: string | null;
+    yearsExperience: number | null;
+  }> | null;
+}>;
+// Variable: PROJECTS_SLUGS_QUERY
+// Query: *[_type == "project" && defined(slug.current)]{   "slug": slug.current}
+export type PROJECTS_SLUGS_QUERYResult = Array<{
+  slug: string | null;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project" && slug.current == $slug][0] {   title, body, mainImage  }
+// Query: *[_type == "project" && slug.current == $slug][0] {   _id,  title,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }  }
 export type PROJECT_QUERYResult = {
+  _id: string;
   title: string | null;
   body: Array<{
     children?: Array<{
@@ -373,13 +465,35 @@ export type PROJECT_QUERYResult = {
     alt?: string;
     _type: "image";
   } | null;
+  publishedAt: string | null;
+  categories: Array<{
+    _id: string;
+    slug: Slug | null;
+    title: string | null;
+  }> | Array<never>;
+  author: {
+    name: string | null;
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "\n  *[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n_id, title, slug\n  }\n": PROJECTS_QUERYResult;
-    "\n  *[_type == \"project\" && slug.current == $slug][0] {\n   title, body, mainImage\n  }\n": PROJECT_QUERYResult;
+    "\n  *[_type == \"project\" && defined(slug.current)] | order(publishedAt desc) {\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  },\n      \"technologies\": technologies[]->{\n      _id,\n      name,\n      slug,\n      icon,\n      level,\n      category,\n      description,\n      yearsExperience\n    }\n  }\n": PROJECTS_QUERYResult;
+    "*[_type == \"project\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": PROJECTS_SLUGS_QUERYResult;
+    "\n  *[_type == \"project\" && slug.current == $slug][0] {\n   _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n  }\n": PROJECT_QUERYResult;
   }
 }

@@ -1,11 +1,9 @@
-import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
-import { Project } from "@/sanity/types";
+import { PROJECTS_QUERYResult } from "@/sanity/types";
 
-// type ProjectsViewProps = {
-//   project: Project[];
-// };
+import { ProjectCard } from "@/components/ProjectCard";
+import { Title } from "@/components/Title";
 
 export default async function Page() {
   const { data: projects } = await sanityFetch({
@@ -14,21 +12,12 @@ export default async function Page() {
 
   return (
     <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
-      <h1 className="text-4xl font-bold">Project index</h1>
-      <ul className="grid grid-cols-1 divide-y divide-blue-100">
-        {projects.map((project: Project) => (
-          <li key={project._id}>
-            <Link
-              className="block p-4 hover:text-blue-500"
-              href={`/projects/${project?.slug!.current ?? ""}`}
-            >
-              {project?.title}
-            </Link>
-          </li>
+      <Title>Projects portfolio</Title>
+      <div className="flex flex-col gap-12">
+        {projects.map((project: PROJECTS_QUERYResult[0]) => (
+          <ProjectCard key={project._id} {...project} />
         ))}
-      </ul>
-      <hr />
-      <Link href="/">&larr; Return home</Link>
+      </div>
     </main>
   );
 }
