@@ -11,8 +11,8 @@ export default async function Page() {
   });
 
   return (
-    <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
-      <Title>Projects portfolio</Title>
+    <main className="container mx-auto grid grid-cols-1 gap-6 py-12 px-0">
+      <Title>Projects</Title>
       <div className="flex flex-col gap-12">
         {projects.map((project: PROJECTS_QUERYResult[0]) => (
           <ProjectCard key={project._id} {...project} />

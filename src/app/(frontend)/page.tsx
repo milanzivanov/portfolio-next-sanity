@@ -14,8 +14,7 @@ export default async function Page() {
                 <div className="text-md leading-6 uppercase py-1 px-3 bg-white font-mono italic">
                   Mister Zivanov
                 </div>
-                <Title>Frontend portfolio</Title>
-                {/* <Link href="/projects">Projects index &rarr;</Link> */}
+                <Title size="lg">Frontend portfolio</Title>
                 {/* <Link
                   className="rounded-full flex gap-4 items-center bg-black hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
                   href="/projects"

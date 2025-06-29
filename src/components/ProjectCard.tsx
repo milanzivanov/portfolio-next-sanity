@@ -12,8 +12,8 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
 
   return (
     <Link className="group" href={`/projects/${props.slug!.current}`}>
-      <article className="bg-slate-50 p-10 flex flex-col-reverse gap-6 md:grid md:grid-cols-12 md:gap-4">
-        <div className="md:col-span-8 flex flex-col gap-4">
+      <article className="bg-slate-50 p-10 flex flex-col-reverse gap-6 md:grid md:grid-cols-12 md:gap-4 rounded-lg">
+        <div className="md:col-span-8 flex flex-col gap-2">
           <div className="md:pt-1">
             <Categories categories={categories} />
           </div>

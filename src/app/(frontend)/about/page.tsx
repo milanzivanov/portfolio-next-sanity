@@ -1,8 +1,10 @@
+import { Title } from "@/components/Title";
+
 function AboutPage() {
   return (
     <div className="w-full text-2xl">
       <div className="container">
-        <h1>About page</h1>
+        <Title size="md">About page</Title>
       </div>
     </div>
   );
