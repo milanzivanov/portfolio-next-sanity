@@ -112,6 +112,7 @@ export type Project = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "skill";
   }>;
+  url?: string;
 };
 
 export type Author = {
@@ -319,7 +320,7 @@ export type AllSanitySchemaTypes = Skill | Project | Author | Category | BlockCo
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(publishedAt desc) {  _id,  title,  slug,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  },      "technologies": technologies[]->{      _id,      name,      slug,      icon,      level,      category,      description,      yearsExperience    }  }
+// Query: *[_type == "project" && defined(slug.current)] | order(publishedAt desc) {  _id,  title,  slug,  body,  mainImage,  publishedAt,  url,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  },    "technologies": technologies[]->{      _id,      name,      slug,      icon,      level,      category,      description,      yearsExperience    }  }
 export type PROJECTS_QUERYResult = Array<{
   _id: string;
   title: string | null;
@@ -369,6 +370,7 @@ export type PROJECTS_QUERYResult = Array<{
     _type: "image";
   } | null;
   publishedAt: string | null;
+  url: string | null;
   categories: Array<{
     _id: string;
     slug: Slug | null;
@@ -417,7 +419,7 @@ export type PROJECTS_SLUGS_QUERYResult = Array<{
   slug: string | null;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project" && slug.current == $slug][0] {   _id,  title,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }  }
+// Query: *[_type == "project" && slug.current == $slug][0] {   _id,  title,  body,  mainImage,  publishedAt,  url,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }  }
 export type PROJECT_QUERYResult = {
   _id: string;
   title: string | null;
@@ -466,6 +468,7 @@ export type PROJECT_QUERYResult = {
     _type: "image";
   } | null;
   publishedAt: string | null;
+  url: string | null;
   categories: Array<{
     _id: string;
     slug: Slug | null;
@@ -492,8 +495,8 @@ export type PROJECT_QUERYResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "\n  *[_type == \"project\" && defined(slug.current)] | order(publishedAt desc) {\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  },\n      \"technologies\": technologies[]->{\n      _id,\n      name,\n      slug,\n      icon,\n      level,\n      category,\n      description,\n      yearsExperience\n    }\n  }\n": PROJECTS_QUERYResult;
+    "\n  *[_type == \"project\" && defined(slug.current)] | order(publishedAt desc) {\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  url,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  },\n    \"technologies\": technologies[]->{\n      _id,\n      name,\n      slug,\n      icon,\n      level,\n      category,\n      description,\n      yearsExperience\n    }\n  }\n": PROJECTS_QUERYResult;
     "*[_type == \"project\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": PROJECTS_SLUGS_QUERYResult;
-    "\n  *[_type == \"project\" && slug.current == $slug][0] {\n   _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n  }\n": PROJECT_QUERYResult;
+    "\n  *[_type == \"project\" && slug.current == $slug][0] {\n   _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  url,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n  }\n": PROJECT_QUERYResult;
   }
 }

@@ -7,19 +7,31 @@ import { PublishedAt } from "@/components/PublishedAt";
 import { Title } from "@/components/Title";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Project(props: NonNullable<PROJECT_QUERYResult>) {
-  const { title, author, mainImage, body, publishedAt, categories } = props;
+  const { title, author, mainImage, body, publishedAt, categories, url } =
+    props;
 
   return (
-    <article className="bg-slate-50 p-2 rounded-lg">
+    <article className="bg-slate-50 shadow-md p-2 rounded-lg">
       <header className="flex flex-col gap-4 items-start mb-8">
         <div className="flex gap-4 items-center">
           <Categories categories={categories} />
           <PublishedAt publishedAt={publishedAt} />
         </div>
-        <Title>{title}</Title>
+        <Title size="md">{title}</Title>
         <Author author={author} />
+        {url && (
+          <Link
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-blue-600"
+          >
+            View it live
+          </Link>
+        )}
       </header>
       <div className="flex flex-col lg:flex-row gap-8">
         {mainImage && (
@@ -29,7 +41,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
               width={800}
               height={500}
               alt={title || "no alt provided"}
-              className="rounded-lg w-full h-auto"
+              className="rounded-lg w-full shadow-md h-auto"
             />
           </figure>
         )}

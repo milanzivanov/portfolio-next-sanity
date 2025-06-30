@@ -5,7 +5,8 @@ export default async function Page() {
   return (
     <>
       <div className="flex flex-col relative min-h-[calc(100vh-96px)]">
-        <div className="flex-1 flex justify-center items-center relative bg-[url(/tile-1-black.png)] bg-size-[5px]">
+        {/* <div className="flex-1 flex justify-center items-center relative bg-[url(/tile-1-black.png)] bg-size-[5px]"> */}
+        <div className="flex-1 flex justify-center items-center relative bg-[url(/bg.webp)] bg-cover">
           <div className=" bg-gradient-to-b from-white w-full h-full absolute top-0"></div>
           {/* top */}
           <div className="container">

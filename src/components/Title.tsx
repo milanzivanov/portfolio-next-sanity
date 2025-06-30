@@ -13,7 +13,7 @@ const sizeClasses = {
 export function Title({ children, size = "md" }: TitleProps) {
   return (
     <h1
-      className={`${sizeClasses[size]} font-bold tracking-widest text-slate-800`}
+      className={`${sizeClasses[size]} font-extrabold uppercase tracking-widest text-slate-800`}
     >
       {children}
     </h1>

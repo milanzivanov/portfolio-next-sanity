@@ -8,6 +8,7 @@ export const PROJECTS_QUERY = defineQuery(`
   body,
   mainImage,
   publishedAt,
+  url,
   "categories": coalesce(
     categories[]->{
       _id,
@@ -20,7 +21,7 @@ export const PROJECTS_QUERY = defineQuery(`
     name,
     image
   },
-      "technologies": technologies[]->{
+    "technologies": technologies[]->{
       _id,
       name,
       slug,
@@ -45,6 +46,7 @@ export const PROJECT_QUERY = defineQuery(`
   body,
   mainImage,
   publishedAt,
+  url,
   "categories": coalesce(
     categories[]->{
       _id,

@@ -12,7 +12,7 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
 
   return (
     <Link className="group" href={`/projects/${props.slug!.current}`}>
-      <article className="bg-slate-50 p-10 flex flex-col-reverse gap-6 md:grid md:grid-cols-12 md:gap-4 rounded-lg">
+      <article className="bg-slate-50 shadow-md p-10 flex flex-col-reverse gap-6 md:grid md:grid-cols-12 md:gap-4 rounded-lg">
         <div className="md:col-span-8 flex flex-col gap-2">
           <div className="md:pt-1">
             <Categories categories={categories} />
@@ -38,7 +38,7 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
             <PublishedAt publishedAt={publishedAt} />
           </div>
         </div>
-        <div className="md:col-span-4 rounded-lg overflow-hidden">
+        <div className="md:col-span-4 rounded-lg shadow-md overflow-hidden">
           {mainImage ? (
             <Image
               src={urlFor(mainImage).width(500).height(300).url()}

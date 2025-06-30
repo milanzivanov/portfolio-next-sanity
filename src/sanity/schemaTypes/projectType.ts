@@ -68,6 +68,12 @@ export const projectType = defineType({
           to: [{ type: "skill" }]
         })
       ]
+    }),
+    defineField({
+      name: "url",
+      title: "URL",
+      type: "url",
+      validation: (Rule) => Rule.required()
     })
   ],
   preview: {
