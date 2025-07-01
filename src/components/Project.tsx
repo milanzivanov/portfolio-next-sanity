@@ -14,43 +14,50 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
     props;
 
   return (
-    <article className="bg-slate-50 shadow-md p-2 rounded-lg">
-      <header className="flex flex-col gap-4 items-start mb-8">
-        <div className="flex gap-4 items-center">
-          <Categories categories={categories} />
-          <PublishedAt publishedAt={publishedAt} />
-        </div>
-        <Title size="md">{title}</Title>
-        <Author author={author} />
-        {url && (
-          <Link
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-blue-600"
-          >
-            View it live
-          </Link>
-        )}
-      </header>
-      <div className="flex flex-col lg:flex-row gap-8">
-        {mainImage && (
-          <figure className="w-full lg:w-1/2 flex flex-col gap-2 items-start">
-            <Image
-              src={urlFor(mainImage).width(800).height(500).url()}
-              width={800}
-              height={500}
-              alt={title || "no alt provided"}
-              className="rounded-lg w-full shadow-md h-auto"
-            />
-          </figure>
-        )}
-        {body && (
-          <div className="prose lg:prose-lg w-full lg:w-1/2">
-            <PortableText value={body} components={components} />
+    <>
+      <article className="bg-slate-50 shadow-md p-2 rounded-lg">
+        <header className="flex flex-col gap-4 items-start mb-8">
+          <div className="flex gap-4 items-center">
+            <Categories categories={categories} />
+            <PublishedAt publishedAt={publishedAt} />
           </div>
-        )}
+          <Title size="md">{title}</Title>
+          <Author author={author} />
+          {url && (
+            <Link
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline text-blue-600"
+            >
+              View it live
+            </Link>
+          )}
+        </header>
+        <div className="flex flex-col lg:flex-row gap-8">
+          {mainImage && (
+            <figure className="w-full lg:w-1/2 flex flex-col gap-2 items-start">
+              <Image
+                src={urlFor(mainImage).width(800).height(500).url()}
+                width={800}
+                height={500}
+                alt={title || "no alt provided"}
+                className="rounded-lg w-full shadow-md h-auto"
+              />
+            </figure>
+          )}
+          {body && (
+            <div className="prose lg:prose-lg w-full lg:w-1/2">
+              <PortableText value={body} components={components} />
+            </div>
+          )}
+        </div>
+      </article>
+      <div className="flex justify-end">
+        <Link className="text-blue-600" href="/">
+          &larr; Back home
+        </Link>
       </div>
-    </article>
+    </>
   );
 }

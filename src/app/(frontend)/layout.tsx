@@ -39,11 +39,5 @@ export default async function FrontendLayout({
         )}
       </main>
     </section>
-
-    // <section className="bg-white min-h-screen">
-    //   <Header />
-    //   {children}
-    //   <SanityLive />
-    // </section>
   );
 }
