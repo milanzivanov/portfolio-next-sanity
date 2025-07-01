@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 
 type TitleProps = PropsWithChildren<{
   size?: "sm" | "md" | "lg";
+  text?: "uppercase" | "lowercase" | "capitalize";
 }>;
 
 const sizeClasses = {
@@ -10,10 +11,14 @@ const sizeClasses = {
   lg: "text-3xl md:text-4xl lg:text-5xl"
 };
 
-export function Title({ children, size = "md" }: TitleProps) {
+export function Title({
+  children,
+  size = "md",
+  text = "capitalize"
+}: TitleProps) {
   return (
     <h1
-      className={`${sizeClasses[size]} font-extrabold uppercase tracking-widest text-slate-800`}
+      className={`${sizeClasses[size]} ${text} font-extrabold tracking-widest text-slate-800`}
     >
       {children}
     </h1>

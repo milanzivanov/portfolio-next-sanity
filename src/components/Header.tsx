@@ -33,7 +33,7 @@ export default function Header() {
                   href="/projects"
                   rel="noopener noreferrer"
                 >
-                  <span className="whitespace-nowrap">View projects</span>
+                  <span className="whitespace-nowrap">View portfolio</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
