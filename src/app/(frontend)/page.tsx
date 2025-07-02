@@ -22,11 +22,13 @@ export default async function Page() {
           <div className="container">
             <div className="relative mx-auto max-w-2xl space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center justify-center">
               <div className="flex flex-col pb-[96px] gap-4 items-center">
-                <div className="text-md leading-6 uppercase py-1 px-3 bg-white font-mono italic">
+                <div className="text-md leading-6 capitalize py-1 px-3 bg-white font-mono">
                   Mister Zivanov
                 </div>
                 <Title size="lg" text="uppercase">
-                  Frontend Developer
+                  <span className="block font-extrabold bg-gradient-to-r from-[#0071bc] to-[#6366f1] bg-clip-text text-transparent">
+                    Frontend developer
+                  </span>
                 </Title>
                 <Link
                   className="rounded-full flex gap-4 items-center bg-black hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
@@ -53,7 +55,8 @@ export default async function Page() {
             <div className="prose sm:prose-lg text-gray-700 prose-a:text-gray-700 font-light text-center">
               Hi, I&apos;m <strong>Milan</strong> Curiosity driven{" "}
               <strong>Frontend developer</strong> with 2+ years of experience at
-              Vega IT Solution(two-week internship), OMA Adriatic, and HTEC, I
+              <strong> Vega IT Solution</strong>(two-week internship) ,{" "}
+              <strong>OMA Adriatic</strong>, and at<strong> HTEC</strong>. I
               specialize in crafting clean, user-friendly digital experiences.
               🚀
               {/* {settings?.description && (

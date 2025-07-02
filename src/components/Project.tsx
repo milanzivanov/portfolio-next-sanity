@@ -30,7 +30,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
               rel="noopener noreferrer"
               className="hover:underline text-blue-600"
             >
-              View it live
+              View it live &rarr;
             </Link>
           )}
         </header>
@@ -54,7 +54,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
         </div>
       </article>
       <div className="flex justify-end">
-        <Link className="text-blue-600" href="/">
+        <Link className="text-blue-600 pt-1" href="/">
           &larr; Back home
         </Link>
       </div>
