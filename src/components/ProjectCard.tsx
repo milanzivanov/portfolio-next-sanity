@@ -1,3 +1,5 @@
+"use client";
+
 import { Author } from "@/components/Author";
 import { Categories } from "@/components/Categories";
 import { PROJECTS_QUERYResult } from "@/sanity/types";
@@ -6,13 +8,21 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
   const { title, author, mainImage, publishedAt, categories, technologies } =
     props;
 
   return (
     <Link className="group" href={`/projects/${props.slug!.current}`}>
-      <article className="group bg-slate-50 shadow-md p-10 flex flex-col-reverse gap-6 md:grid md:grid-cols-12 md:gap-4 rounded-lg transition-colors hover:bg-white">
+      <motion.article
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+        className="group bg-slate-50 shadow-md p-10 flex flex-col-reverse gap-6 md:grid md:grid-cols-12 md:gap-4 rounded-lg transition-colors hover:bg-white"
+      >
         <div className="md:col-span-8 flex flex-col gap-2">
           <div className="md:pt-1">
             <Categories categories={categories} />
@@ -51,7 +61,7 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
             />
           ) : null}
         </div>
-      </article>
+      </motion.article>
     </Link>
   );
 }

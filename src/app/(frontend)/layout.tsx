@@ -2,9 +2,11 @@ import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
 
-import Header from "@/components/Header";
 import { SanityLive } from "@/sanity/lib/live";
 import type { Metadata } from "next";
+
+import Header from "@/components/Header";
+
 import "./../globals.css";
 
 import { Inter } from "next/font/google";

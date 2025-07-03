@@ -8,9 +8,9 @@ function AboutPage() {
   return (
     <>
       <div className="w-full md:h-[calc(100dvh-96px)] h-auto flex flex-col items-center justify-center">
-        <div className="max-w-5xl mx-auto fadeInUp">
+        <div className="max-w-5xl mx-auto">
           <div className="w-full flex flex-col-reverse gap-5 md:flex-row-reverse">
-            <div className="relative bg-slate-50 flex flex-col justify-center rounded-md md:shadow-md space-y-1 md:space-y-3 p-5">
+            <div className="relative bg-slate-50 flex flex-col justify-center rounded-md md:shadow-lg space-y-1 md:space-y-3 p-5">
               <Title size="sm" text="capitalize">
                 Bit about myself
               </Title>

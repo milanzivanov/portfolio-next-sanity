@@ -1,4 +1,7 @@
+"use client";
+
 import { PropsWithChildren } from "react";
+import { motion } from "framer-motion";
 
 type TitleProps = PropsWithChildren<{
   size?: "sm" | "md" | "lg";
@@ -17,10 +20,13 @@ export function Title({
   text = "capitalize"
 }: TitleProps) {
   return (
-    <h1
+    <motion.h1
+      initial={{ opacity: 0, x: -40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
       className={`${sizeClasses[size]} ${text} font-extrabold tracking-widest text-slate-800`}
     >
       {children}
-    </h1>
+    </motion.h1>
   );
 }
