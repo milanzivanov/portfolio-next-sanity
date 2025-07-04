@@ -2,7 +2,8 @@ import { Title } from "@/components/Title";
 import Image from "next/image";
 import Link from "next/link";
 
-import aboutImage from "../../../../public/coding-about.webp";
+// import aboutImage from "../../../../public/coding-about.webp";
+import personalPicture from "../../../../public/Milan_right.webp";
 
 export const metadata = {
   title: "About page"
@@ -65,10 +66,10 @@ function AboutPage() {
                 applications. 🚀
               </p>
             </div>
-            <div className="relative pr-5 md:max-w-[450px] flex bg-slate-100  rounded-md md:shadow-md">
+            <div className="relative md:max-w-[450px] flex bg-slate-100  rounded-md md:shadow-md">
               <Image
                 className="object-cover"
-                src={aboutImage}
+                src={personalPicture}
                 alt="Family sitting around a fire pit in front of cabin"
                 quality={80}
               />
