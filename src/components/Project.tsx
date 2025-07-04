@@ -54,7 +54,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
         </div>
       </article>
       <div className="flex justify-end">
-        <Link className="text-blue-600 pt-1" href="/">
+        <Link className="text-blue-600 pt-1 pr-5" href="/">
           &larr; Back home
         </Link>
       </div>

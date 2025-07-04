@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="w-full bg-slate-50 border-t border-slate-200">
-      <div className="container flex flex-col items-center py-10 gap-4">
+    <footer className="w-full bg-slate-50">
+      <div className="container flex flex-col items-center py-10 px-2 gap-4">
         <p className="text-base text-slate-600 text-center">
           I&rsquo;d love to hear from you if you have any questions or want to
           work together.
