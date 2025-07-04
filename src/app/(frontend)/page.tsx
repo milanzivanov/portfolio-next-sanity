@@ -8,14 +8,9 @@ import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 import type { Metadata } from "next";
 
-export async function generateMetadata({
-  params
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const { data } = await sanityFetch({
-    query: PROJECTS_QUERY,
-    params: { slug: params.slug }
+    query: PROJECTS_QUERY
   });
 
   return {
