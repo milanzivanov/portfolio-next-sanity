@@ -18,7 +18,7 @@ export default async function Page({
   }
 
   return (
-    <main className="container mx-auto grid grid-cols-1 py-12 px-0">
+    <main className="container mx-auto grid grid-cols-1 py-4 px-0">
       <Project {...project} />
     </main>
   );

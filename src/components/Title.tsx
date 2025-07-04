@@ -11,7 +11,7 @@ type TitleProps = PropsWithChildren<{
 const sizeClasses = {
   sm: "text-xl md:text-2xl lg:text-3xl",
   md: "text-2xl md:text-3xl lg:text-4xl",
-  lg: "text-3xl md:text-4xl lg:text-5xl"
+  lg: "text-2xl md:text-4xl lg:text-5xl"
 };
 
 export function Title({

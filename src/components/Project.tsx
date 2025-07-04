@@ -15,7 +15,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
 
   return (
     <>
-      <article className="bg-slate-50 shadow-md p-2 rounded-lg">
+      <article className="bg-slate-50 shadow-md p-5 rounded-lg">
         <header className="flex flex-col gap-4 items-start mb-8">
           <div className="flex gap-4 items-center">
             <Categories categories={categories} />

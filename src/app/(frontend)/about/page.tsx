@@ -4,13 +4,17 @@ import Link from "next/link";
 
 import aboutImage from "../../../../public/coding-about.webp";
 
+export const metadata = {
+  title: "About page"
+};
+
 function AboutPage() {
   return (
     <>
       <div className="w-full md:h-[calc(100dvh-96px)] h-auto flex flex-col items-center justify-center">
         <div className="max-w-5xl mx-auto">
           <div className="w-full flex flex-col-reverse gap-5 md:flex-row-reverse">
-            <div className="relative bg-slate-50 flex flex-col justify-center rounded-md md:shadow-lg space-y-1 md:space-y-3 p-5">
+            <div className="relative bg-slate-100 flex flex-col justify-center rounded-md md:shadow-md space-y-1 md:space-y-3 p-5">
               <Title size="sm" text="capitalize">
                 Bit about myself
               </Title>
@@ -61,7 +65,7 @@ function AboutPage() {
                 applications. 🚀
               </p>
             </div>
-            <div className="relative pr-5 md:max-w-[450px] flex bg-slate-50  rounded-md md:shadow-md">
+            <div className="relative pr-5 md:max-w-[450px] flex bg-slate-100  rounded-md md:shadow-md">
               <Image
                 className="object-cover"
                 src={aboutImage}
