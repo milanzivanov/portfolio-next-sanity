@@ -4,6 +4,7 @@ import Link from "next/link";
 
 // import aboutImage from "../../../../public/coding-about.webp";
 import personalPicture from "../../../../public/Milan_right.webp";
+import BackToHome from "@/components/BackToHome";
 
 export const metadata = {
   title: "About page"
@@ -75,11 +76,7 @@ function AboutPage() {
               />
             </div>
           </div>
-          <div className="flex justify-end">
-            <Link className="text-blue-600 pt-1 pr-5" href="/">
-              &larr; Back home
-            </Link>
-          </div>
+          <BackToHome />
         </div>
       </div>
     </>

@@ -8,6 +8,7 @@ import { Title } from "@/components/Title";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
+import BackToHome from "./BackToHome";
 
 export function Project(props: NonNullable<PROJECT_QUERYResult>) {
   const { title, author, mainImage, body, publishedAt, categories, url } =
@@ -53,11 +54,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
           )}
         </div>
       </article>
-      <div className="flex justify-end">
-        <Link className="text-blue-600 pt-1 pr-5" href="/">
-          &larr; Back home
-        </Link>
-      </div>
+      <BackToHome />
     </>
   );
 }

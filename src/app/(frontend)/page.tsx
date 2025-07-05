@@ -85,7 +85,7 @@ export default async function Page() {
           <div className="container mx-auto grid grid-cols-1 gap-6 py-12 px-0">
             <div className="px-10 md:px-0">
               <h2 className="text-3xl font-bold tracking-wider text-slate-800 sm:text-4xl">
-                Portfolio
+                Recent projects
               </h2>
               <p className="mt-2 text-lg leading-8 text-gray-600">
                 These projects are populated from my Sanity Studio.
