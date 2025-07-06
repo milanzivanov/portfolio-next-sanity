@@ -66,7 +66,8 @@ export default async function Page() {
           <div className="container flex flex-col relative mx-auto max-w-2xl space-y-6 lg:max-w-4xl lg:px-12">
             <div className="prose sm:prose-lg px-5 md:px-0 text-gray-700 prose-a:text-gray-700 font-light text-center">
               Hi, I&apos;m <strong>Milan</strong> Curiosity driven{" "}
-              <strong>Frontend developer</strong> with 2+ years of experience at
+              <strong>Frontend developer</strong> with <strong>2+</strong> years
+              of experience at
               <strong> Vega IT Solution</strong>(two-week internship) ,{" "}
               <strong>OMA Adriatic</strong>, and at<strong> HTEC</strong>. I
               specialize in crafting clean, user-friendly digital experiences.
