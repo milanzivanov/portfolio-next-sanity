@@ -5,6 +5,8 @@ import { DisableDraftMode } from "@/components/DisableDraftMode";
 import { SanityLive } from "@/sanity/lib/live";
 import type { Metadata } from "next";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import Header from "@/components/Header";
 
 import "./../globals.css";
@@ -41,6 +43,7 @@ export default async function FrontendLayout({
           </>
         )}
       </main>
+      <SpeedInsights />
     </section>
   );
 }
