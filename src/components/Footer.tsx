@@ -1,8 +1,8 @@
 function Footer() {
   return (
-    <footer className="w-full bg-slate-50">
+    <footer className="w-full bg-slate-50 dark:bg-slate-800">
       <div className="container flex flex-col items-center py-10 px-2 gap-4">
-        <p className="text-base text-slate-600 text-center">
+        <p className="text-base text-slate-800 dark:text-slate-50  text-center">
           I&rsquo;d love to hear from you if you have any questions or want to
           work together.
           <br />
@@ -14,7 +14,7 @@ function Footer() {
               href="https://www.linkedin.com/in/milan-%C5%BEivanov1983/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors"
+              className="flex items-center gap-2 text-slate-800 dark:text-slate-50 hover:text-blue-600 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ function Footer() {
               href="https://github.com/milanzivanov"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors"
+              className="flex items-center gap-2 text-slate-800 dark:text-slate-50  hover:text-blue-600 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ function Footer() {
             </a>
           </li>
         </ul>
-        <p className="text-xs text-slate-400 mt-2">
+        <p className="text-xs text-slate-800 dark:text-slate-50 font-mono mt-2">
           &copy; {new Date().getFullYear()} Milan
         </p>
       </div>

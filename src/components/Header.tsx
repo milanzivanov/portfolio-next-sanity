@@ -1,17 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
+  // not in use for now
   // const { data: settings } = await sanityFetch({
   //   query: settingsQuery
   // });
 
   return (
-    <header className="fixed z-50 h-24 inset-0 bg-white/80 flex items-center backdrop-blur-lg">
+    <header className="fixed z-50 h-24 inset-0 bg-white/80 dark:bg-slate-900/80 flex items-center backdrop-blur-lg">
       <div className="container py-6 px-10 md:px-0">
         <div className="flex items-center justify-between gap-5">
           <Link className="flex items-center gap-2" href="/">
-            <span className="text-lg sm:text-2xl font-semibold">
+            <span className="text-lg sm:text-2xl font-semibold text-black">
               <Image width={32} height={32} src="/logo.png" alt="logo" />
             </span>
           </Link>
@@ -19,7 +21,7 @@ export default function Header() {
           <nav>
             <ul
               role="list"
-              className="flex items-center gap-4 md:gap-6 leading-5 text-base tracking-tight font-mono"
+              className="flex items-center gap-4 md:gap-6 leading-5 text-base tracking-tight font-mono text-slate-800 dark:text-slate-100"
             >
               <li>
                 <Link href="/about" className="hover:underline">
@@ -29,7 +31,7 @@ export default function Header() {
 
               <li className="sm:before:w-[1px] sm:before:bg-gray-200 before:block flex sm:gap-4 md:gap-6">
                 <Link
-                  className="rounded-full flex gap-4 items-center bg-black hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
+                  className="rounded-full flex gap-4 items-center bg-slate-900 dark:bg-white hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white dark:text-black transition-colors duration-200"
                   href="https://github.com/milanzivanov"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -47,46 +49,9 @@ export default function Header() {
               </li>
             </ul>
           </nav>
+          <ThemeToggle />
         </div>
       </div>
     </header>
   );
 }
-
-// export function Header() {
-//   return (
-//     <div className="from-pink-50 to-white bg-gradient-to-b p-6">
-//       <header className="bg-white/80 shadow-md flex items-center justify-between p-6 rounded-lg container mx-auto shadow-pink-50">
-//         <Link
-//           className="text-pink-700 md:text-xl font-bold tracking-tight"
-//           href="/"
-//         >
-//           <Image width={32} height={32} src="/logo.png" alt="logo" />
-//         </Link>
-//         <ul className="flex items-center gap-4 font-semibold text-slate-700">
-//           <li>
-//             <Link className="hover:text-pink-500 transition-colors" href="/">
-//               home
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className="hover:text-pink-500 transition-colors"
-//               href="/projects"
-//             >
-//               projects
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className="hover:text-pink-500 transition-colors"
-//               href="/studio"
-//             >
-//               sanity studio
-//             </Link>
-//           </li>
-//         </ul>
-//       </header>
-//     </div>
-//   );
-// }
