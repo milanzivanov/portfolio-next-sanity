@@ -24,7 +24,7 @@ export function Title({
       initial={{ opacity: 0, x: -40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
-      className={`${sizeClasses[size]} ${text} font-extrabold tracking-widest text-slate-800`}
+      className={`${sizeClasses[size]} ${text} font-extrabold tracking-widest text-slate-900`}
     >
       {children}
     </motion.h1>

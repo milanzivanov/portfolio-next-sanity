@@ -26,24 +26,22 @@ export default async function Page() {
   return (
     <>
       <div className="flex flex-col relative min-h-[calc(100vh-96px)]">
-        {/* bg image not in use */}
-        {/* <div className="flex-1 flex justify-center items-center relative bg-[url(/tile-1-black.png)] bg-size-[5px]"> */}
         <div className="flex-1 flex justify-center items-center relative bg-[url(/bg.webp)] bg-cover">
-          <div className=" bg-gradient-to-b from-white w-full h-full absolute top-0"></div>
+          <div className=" bg-gradient-to-b from-white dark:from-black/80 w-full h-full absolute top-0"></div>
           {/* top */}
           <div className="container">
             <div className="relative min-h-[40vh] mx-auto max-w-2xl space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center justify-center">
               <div className="flex flex-col pb-[96px] gap-4 items-center">
-                <div className="text-md leading-6 capitalize py-1 px-3 bg-white font-mono">
+                <div className="text-md leading-6 capitalize py-1 px-3 rounded-full bg-[#0071bc] dark:bg-white text-white dark:text-slate-900  font-mono">
                   Mister Zivanov
                 </div>
                 <Title size="lg" text="uppercase">
-                  <span className="block font-extrabold bg-gradient-to-r from-[#0071bc] to-[#6366f1] bg-clip-text text-transparent">
+                  <span className="block font-extrabold bg-gradient-to-r from-[#0071bc] dark:from-[#ffffff] to-[#6366f1] dark:to-[#f3f3f3] bg-clip-text text-transparent">
                     Frontend developer
                   </span>
                 </Title>
                 <Link
-                  className="rounded-full flex gap-4 items-center bg-black hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
+                  className="rounded-full flex gap-4 items-center bg-slate-900 hover:bg-blue-500 focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
                   href="#portfolio"
                   rel="noopener noreferrer"
                 >
@@ -63,13 +61,18 @@ export default async function Page() {
         </div>
         {/* bottom */}
         <div className="flex-1 flex flex-col justify-center items-center">
-          <div className="container flex flex-col relative mx-auto max-w-2xl space-y-6 lg:max-w-4xl lg:px-12">
-            <div className="prose sm:prose-lg px-5 md:px-0 text-gray-700 prose-a:text-gray-700 font-light text-center">
-              Hi, I&apos;m <strong>Milan</strong> Curiosity driven{" "}
-              <strong>Frontend developer</strong> with <strong>2+</strong> years
-              of experience at
-              <strong> Vega IT Solution</strong>(two-week internship) ,{" "}
-              <strong>OMA Adriatic</strong>, and at<strong> HTEC</strong>. I
+          <div className="container flex flex-col relative items-center mx-auto max-w-2xl space-y-6 lg:max-w-4xl lg:px-12">
+            <div className="prose sm:prose-lg px-5 md:px-0 text-slate-900 dark:text-slate-50 prose-a:text-gray-700 font-light text-center">
+              Hi, I&apos;m <strong className="dark:text-slate-50">Milan</strong>{" "}
+              Curiosity driven{" "}
+              <strong className="dark:text-slate-50">Frontend developer</strong>{" "}
+              with <strong className="dark:text-slate-50">2+</strong> years of
+              experience at
+              <strong className="dark:text-slate-50"> Vega IT Solution</strong>
+              (two-week internship) ,{" "}
+              <strong className="dark:text-slate-50">OMA Adriatic</strong>, and
+              at
+              <strong className="dark:text-slate-50"> HTEC</strong>. I
               specialize in crafting clean, user-friendly digital experiences.
               🚀
               {/* {settings?.description && (
@@ -81,14 +84,17 @@ export default async function Page() {
       </div>
 
       {/* portfolio */}
-      <section className="w-full bg-gray-50 scroll-mt-[92px]" id="portfolio">
+      <section
+        className="w-full bg-slate-50 dark:bg-slate-800 scroll-mt-[92px]"
+        id="portfolio"
+      >
         <div className="container flex items-center justify-center">
           <div className="container mx-auto grid grid-cols-1 gap-6 py-12 px-0">
             <div className="px-10 md:px-0">
-              <h2 className="text-3xl font-bold tracking-wider text-slate-800 sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-wider text-slate-800 dark:text-slate-100 sm:text-4xl">
                 Recent projects
               </h2>
-              <p className="mt-2 text-lg leading-8 text-gray-600">
+              <p className="mt-2 text-lg leading-8 text-slate-800 dark:text-slate-100">
                 These projects are populated from my Sanity Studio.
               </p>
             </div>
