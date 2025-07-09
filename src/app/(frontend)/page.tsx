@@ -6,17 +6,6 @@ import { PROJECTS_QUERY } from "@/sanity/lib/queries";
 import { PROJECTS_QUERYResult } from "@/sanity/types";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
-import type { Metadata } from "next";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await sanityFetch({
-    query: PROJECTS_QUERY
-  });
-
-  return {
-    title: data?.[0]?.title || "Milan Portfolio"
-  };
-}
 
 export default async function Page() {
   const { data: projects } = await sanityFetch({

@@ -16,7 +16,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
 
   return (
     <>
-      <article className="bg-slate-50 shadow-md p-5 rounded-lg">
+      <article className="bg-slate-50 dark:bg-slate-800 shadow-md p-5 md:rounded-lg">
         <header className="flex flex-col gap-4 items-start mb-8">
           <div className="flex gap-4 items-center">
             <Categories categories={categories} />
@@ -29,7 +29,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline text-blue-600"
+              className="hover:underline text-blue-600 dark:text-slate-50"
             >
               View it live &rarr;
             </Link>
@@ -48,7 +48,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
             </figure>
           )}
           {body && (
-            <div className="prose lg:prose-lg w-full lg:w-1/2">
+            <div className="prose lg:prose-lg w-full lg:w-1/2 text-slate-800 dark:text-slate-50">
               <PortableText value={body} components={components} />
             </div>
           )}

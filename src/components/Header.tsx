@@ -21,7 +21,7 @@ export default function Header() {
           <nav>
             <ul
               role="list"
-              className="flex items-center gap-4 md:gap-6 leading-5 text-base tracking-tight font-mono text-slate-800 dark:text-slate-100"
+              className="flex items-center gap-4 md:gap-6 leading-5 text-sm md:text-base sm:text-base tracking-tight font-mono text-slate-800 dark:text-slate-100"
             >
               <li>
                 <Link href="/about" className="hover:underline">
@@ -31,7 +31,7 @@ export default function Header() {
 
               <li className="sm:before:w-[1px] sm:before:bg-gray-200 before:block flex sm:gap-4 md:gap-6">
                 <Link
-                  className="rounded-full flex gap-4 items-center bg-slate-900 dark:bg-white hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white dark:text-black transition-colors duration-200"
+                  className="rounded-full flex gap-4 items-center bg-slate-900 dark:bg-white hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white dark:hover:text-white dark:text-black transition-colors duration-200"
                   href="https://github.com/milanzivanov"
                   target="_blank"
                   rel="noopener noreferrer"
