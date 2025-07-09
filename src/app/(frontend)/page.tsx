@@ -7,6 +7,12 @@ import { PROJECTS_QUERYResult } from "@/sanity/types";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 
+export const metadata = {
+  title: "Welcome / Milan Portfolio",
+  description:
+    "Milan Zivanov - Frontend Developer - Welcome to my personal website and portfolio showcasing my past work. Explore and witness my frontend skills! Feel free to reach out for any inquiries or opportunities to collaborate. This is the portfolio made in next.js and it is my first next.js project but not last"
+};
+
 export default async function Page() {
   const { data: projects } = await sanityFetch({
     query: PROJECTS_QUERY

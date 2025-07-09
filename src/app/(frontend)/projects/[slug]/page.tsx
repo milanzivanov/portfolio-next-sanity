@@ -2,10 +2,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import { Project } from "@/components/Project";
-import { Metadata } from "next";
-
-export const dynamic = "force-dynamic";
-export const revalidate = 3600;
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
