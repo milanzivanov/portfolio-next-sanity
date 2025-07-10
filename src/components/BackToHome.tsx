@@ -3,7 +3,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 
 function BackToHome() {
   return (
-    <div className="flex justify-end pt-5">
+    <>
       <Link
         href="/"
         className="flex items-center w-full md:w-auto justify-center rounded-md bg-blue-500 dark:bg-blue-700 hover:bg-blue-800 text-gray-100 px-6 py-3 text-sm md:text-md"
@@ -12,7 +12,7 @@ function BackToHome() {
 
         <span>Back home</span>
       </Link>
-    </div>
+    </>
   );
 }
 export default BackToHome;

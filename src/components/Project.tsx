@@ -55,7 +55,9 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
             </div>
           )}
         </div>
-        <BackToHome />
+        <div className="flex justify-end pt-5">
+          <BackToHome />
+        </div>
       </article>
     </>
   );

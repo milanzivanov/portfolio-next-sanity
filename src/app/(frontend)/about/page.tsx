@@ -13,10 +13,10 @@ export const metadata = {
 function AboutPage() {
   return (
     <>
-      <div className="w-full h-auto md:h-[calc(100dvh-96px)] flex flex-col items-center justify-center">
+      <div className="w-full min-h-[calc(100dvh-96px)] flex flex-col items-center justify-center">
         <div className="max-w-5xl mx-auto">
-          <div className="w-full flex flex-col-reverse gap-5 md:flex-row-reverse">
-            <div className="relative bg-slate-100 flex flex-col justify-center rounded-md md:shadow-md space-y-1 md:space-y-3 p-5">
+          <div className="w-full flex flex-col-reverse md:gap-5 md:flex-row-reverse">
+            <div className="relative bg-slate-100 flex flex-col justify-center md:rounded-md md:shadow-md space-y-1 md:space-y-3 p-5">
               <Title size="sm" text="capitalize">
                 Bit about myself
               </Title>
@@ -67,7 +67,7 @@ function AboutPage() {
                 applications. 🚀
               </p>
             </div>
-            <div className="relative md:max-w-[450px] flex bg-slate-100  rounded-md md:shadow-md">
+            <div className="relative md:max-w-[450px] flex bg-slate-100 md:rounded-md md:shadow-md">
               <Image
                 className="object-cover"
                 src={personalPicture}
@@ -76,7 +76,9 @@ function AboutPage() {
               />
             </div>
           </div>
-          <BackToHome />
+          <div className="flex justify-end md:pt-5">
+            <BackToHome />
+          </div>
         </div>
       </div>
     </>
