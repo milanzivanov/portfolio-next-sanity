@@ -13,7 +13,7 @@ export const metadata = {
 function AboutPage() {
   return (
     <>
-      <div className="w-full h-[calc(100dvh-96px)] flex flex-col items-center justify-center">
+      <div className="w-full h-auto md:h-[calc(100dvh-96px)] flex flex-col items-center justify-center">
         <div className="max-w-5xl mx-auto">
           <div className="w-full flex flex-col-reverse gap-5 md:flex-row-reverse">
             <div className="relative bg-slate-100 flex flex-col justify-center rounded-md md:shadow-md space-y-1 md:space-y-3 p-5">

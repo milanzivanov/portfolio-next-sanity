@@ -22,7 +22,9 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
             <Categories categories={categories} />
             <PublishedAt publishedAt={publishedAt} />
           </div>
-          <Title size="md">{title}</Title>
+          <Title size="md" text="capitalize" bold="bold">
+            {title}
+          </Title>
           <Author author={author} />
           {url && (
             <Link
@@ -35,7 +37,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
             </Link>
           )}
         </header>
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 bg-slate-100 dark:bg-slate-900 p-5 rounded-lg">
           {mainImage && (
             <figure className="w-full lg:w-1/2 flex flex-col gap-2 items-start">
               <Image
@@ -48,13 +50,13 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
             </figure>
           )}
           {body && (
-            <div className="prose lg:prose-lg w-full lg:w-1/2 text-slate-800 dark:text-slate-50">
+            <div className="prose lg:prose-lg w-full lg:w-1/2 text-slate-800 dark:text-slate-50 prose-a:text-blue-600 dark:prose-a:text-yellow-400">
               <PortableText value={body} components={components} />
             </div>
           )}
         </div>
+        <BackToHome />
       </article>
-      <BackToHome />
     </>
   );
 }
