@@ -27,7 +27,7 @@ export default async function Page() {
           <div className="container">
             <div className="relative min-h-[40vh] mx-auto max-w-2xl space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center justify-center">
               <div className="flex flex-col pb-[96px] gap-4 items-center">
-                <div className="text-md leading-6 capitalize py-1 px-5 rounded-full bg-[#0071bc] dark:bg-white text-white dark:text-slate-900  font-mono">
+                <div className="text-md leading-6 capitalize py-1 px-5 rounded-full bg-blue-500 dark:bg-blue-700 text-white  font-mono">
                   <span className="text-sm">Mister Zivanov</span>
                 </div>
                 <Title size="lg" text="uppercase">

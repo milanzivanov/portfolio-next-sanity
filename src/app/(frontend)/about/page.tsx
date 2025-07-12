@@ -27,7 +27,7 @@ function AboutPage() {
                   href="https://www.vegaitglobal.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+                  className="font-semibold text-blue-500 dark:text-blue-700 hover:text-blue-600 transition-colors duration-300 ease-in-out"
                 >
                   Vega IT Solution
                 </Link>
@@ -36,7 +36,7 @@ function AboutPage() {
                   href="https://omadriatic.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+                  className="font-semibold text-blue-500 dark:text-blue-700 hover:text-blue-600 transition-colors duration-300 ease-in-out"
                 >
                   OMA Adriatic
                 </Link>
@@ -45,7 +45,7 @@ function AboutPage() {
                   href="https://htec.rs/"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+                  className="font-semibold text-blue-500 dark:text-blue-700 hover:text-blue-600 transition-colors duration-300 ease-in-out"
                 >
                   HTEC
                 </Link>

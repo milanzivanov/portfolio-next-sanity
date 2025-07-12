@@ -1,5 +1,9 @@
-import Image from "next/image";
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
@@ -7,6 +11,8 @@ export default function Header() {
   // const { data: settings } = await sanityFetch({
   //   query: settingsQuery
   // });
+
+  const pathname = usePathname();
 
   return (
     <header className="fixed z-50 h-24 inset-0 bg-white/80 dark:bg-slate-900/80 flex items-center backdrop-blur-lg">
@@ -25,14 +31,17 @@ export default function Header() {
                 className="flex items-center gap-4 md:gap-6 leading-5 text-sm md:text-base sm:text-base tracking-tight font-mono text-slate-800 dark:text-slate-100"
               >
                 <li>
-                  <Link href="/about" className="hover:underline">
+                  <Link
+                    href="/about"
+                    className={`hover:underline ${pathname === "/about" ? "underline" : ""}`}
+                  >
                     About
                   </Link>
                 </li>
 
                 <li className="sm:before:w-[1px] hidden  sm:before:bg-gray-200 before:block md:flex sm:gap-4 md:gap-6">
                   <Link
-                    className="rounded-full flex gap-4 items-center bg-slate-900 dark:bg-white hover:bg-blue focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white dark:text-black dark:hover:text-white transition-colors duration-200"
+                    className="rounded-full flex gap-4 items-center bg-blue-500 dark:bg-blue-700 hover:bg-blue-600 focus:bg-blue-50 active:bg-blue-600 py-2 px-4 justify-center sm:py-3 sm:px-6 text-white dark:hover:text-white transition-colors duration-200"
                     href="https://github.com/milanzivanov"
                     target="_blank"
                     rel="noopener noreferrer"
