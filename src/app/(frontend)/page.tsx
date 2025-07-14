@@ -7,6 +7,14 @@ import { PROJECTS_QUERYResult } from "@/sanity/types";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 
+import { Poppins } from "next/font/google";
+
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap"
+});
+
 export const metadata = {
   title: "Welcome / Milan Portfolio",
   description:
@@ -31,7 +39,9 @@ export default async function Page() {
                   <span className="text-sm">Mister Zivanov</span>
                 </div>
                 <Title size="lg" text="uppercase">
-                  <span className="block font-extrabold bg-gradient-to-r from-[#0071bc] dark:from-[#ffffff] to-[#6366f1] dark:to-[#f3f3f3] bg-clip-text text-transparent">
+                  <span
+                    className={`${poppins.className} block font-extrabold bg-gradient-to-r from-[#0071bc] dark:from-[#ffffff] to-[#6366f1] dark:to-[#f3f3f3] bg-clip-text text-transparent`}
+                  >
                     Frontend developer
                   </span>
                 </Title>
