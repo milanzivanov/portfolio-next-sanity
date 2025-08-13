@@ -73,8 +73,10 @@ export default async function Page() {
               <strong className="dark:text-slate-50">Frontend developer</strong>{" "}
               with <strong className="dark:text-slate-50">2+</strong> years of
               experience at
-              <strong className="dark:text-slate-50"> Vega IT Solution</strong>
-              (two-week internship) ,{" "}
+              <strong className="dark:text-slate-50">
+                {" "}
+                Vega IT Solution
+              </strong>,{" "}
               <strong className="dark:text-slate-50">OMA Adriatic</strong>, and
               at
               <strong className="dark:text-slate-50"> HTEC</strong>. I
