@@ -47,7 +47,8 @@ function Footer() {
           </li>
         </ul>
         <p className="text-xs text-slate-800 dark:text-slate-50 font-mono mt-2">
-          &copy; {new Date().getFullYear()} Made by Milan
+          &copy; {new Date().getFullYear()} Made by{" "}
+          <span className="bold">milan.zivanov@gmail.com</span>
         </p>
       </div>
     </footer>
