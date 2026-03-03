@@ -7,7 +7,7 @@ export default function BackToTopButton() {
 
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 200);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

@@ -19,9 +19,20 @@ export default function Header() {
       <div className="container py-6 px-10 2xl:px-0">
         <div className="flex items-center justify-between gap-5">
           <Link className="flex items-center gap-2" href="/">
-            <span className="text-lg sm:text-2xl font-semibold text-black">
-              <Image width={32} height={32} src="/logo.png" alt="logo" />
-            </span>
+            <Image
+              src="/logo-light-mode-2026.svg"
+              alt="Milan Zivanov main logo - light mode"
+              width={42}
+              height={42}
+              className="mx-auto dark:hidden"
+            />
+            <Image
+              src="/logo-dark-mode-2026.svg"
+              alt="Milan Zivanov main logo - dark mode"
+              width={42}
+              height={42}
+              className="mx-auto hidden dark:block"
+            />
           </Link>
 
           <div className="flex items-center gap-5">

@@ -3,6 +3,8 @@ import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import { Project } from "@/components/Project";
 import type { Metadata } from "next";
+import { client } from "@/sanity/lib/client";
+import { PROJECTS_SLUGS_QUERY } from "@/sanity/lib/queries";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -19,6 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `Milan Portfolio - ${project.title}`
       : "Milan Portfolio"
   };
+}
+
+export async function generateStaticParams() {
+  const slugs = await client.fetch(PROJECTS_SLUGS_QUERY);
+  return slugs.map((s: { slug: string }) => ({ slug: s.slug }));
 }
 
 export default async function Page({ params }: Props) {

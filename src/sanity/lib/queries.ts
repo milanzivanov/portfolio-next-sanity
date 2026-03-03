@@ -5,7 +5,6 @@ export const PROJECTS_QUERY = defineQuery(`
   _id,
   title,
   slug,
-  body,
   mainImage,
   publishedAt,
   url,
