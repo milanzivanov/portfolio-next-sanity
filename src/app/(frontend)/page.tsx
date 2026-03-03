@@ -11,7 +11,7 @@ import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["800"],
   display: "swap"
 });
 
@@ -29,8 +29,7 @@ export default async function Page() {
   return (
     <>
       <div className="flex flex-col relative min-h-[calc(100vh-96px)]">
-        <div className="flex-1 flex justify-center items-center relative bg-[url(/bg.webp)] bg-cover">
-          <div className=" bg-gradient-to-b from-white dark:from-black/80 w-full h-full absolute top-0"></div>
+        <div className="flex-1 flex justify-center items-center relative bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 dark:from-slate-900 dark:via-indigo-950 dark:to-purple-950">
           {/* top */}
           <div className="container">
             <div className="relative min-h-[40vh] mx-auto max-w-2xl space-y-6 lg:max-w-4xl lg:px-12 flex flex-col items-center justify-center">
