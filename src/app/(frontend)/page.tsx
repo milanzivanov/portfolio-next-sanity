@@ -46,7 +46,7 @@ export default async function Page() {
                   </span>
                 </Title>
                 <Link
-                  className="rounded-full flex gap-4 items-center bg-slate-900 hover:bg-blue-500 focus:bg-blue py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
+                  className="rounded-full flex gap-4 items-center bg-[#8453D2] hover:bg-[#6d3db8] focus:bg-[#6d3db8] py-2 px-4 justify-center sm:py-3 sm:px-6 text-white transition-colors duration-200"
                   href="#portfolio"
                   rel="noopener noreferrer"
                 >
@@ -95,21 +95,19 @@ export default async function Page() {
         className="w-full bg-slate-50 dark:bg-slate-800 scroll-mt-[92px]"
         id="portfolio"
       >
-        <div className="container flex items-center justify-center">
-          <div className="container mx-auto grid grid-cols-1 gap-6 py-12 md:px-5 px-0">
-            <div className="px-10 md:px-0">
-              <h2 className="text-3xl font-bold tracking-wider text-slate-800 dark:text-slate-100 sm:text-4xl">
-                Recent projects
-              </h2>
-              <p className="mt-2 text-lg leading-8 text-slate-800 dark:text-slate-100">
-                These projects are populated from my Sanity Studio.
-              </p>
-            </div>
-            <div className="flex flex-col gap-12">
-              {projects.map((project: PROJECTS_QUERYResult[0]) => (
-                <ProjectCard key={project._id} {...project} />
-              ))}
-            </div>
+        <div className="container mx-auto grid grid-cols-1 gap-6 py-12 md:px-5 px-0">
+          <div className="px-10 md:px-0">
+            <h2 className="text-3xl font-bold tracking-wider text-slate-800 dark:text-slate-100 sm:text-4xl">
+              Recent projects
+            </h2>
+            <p className="mt-2 text-lg leading-8 text-slate-800 dark:text-slate-100">
+              These projects are populated from my Sanity Studio.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-12">
+            {projects.map((project: PROJECTS_QUERYResult[0]) => (
+              <ProjectCard key={project._id} {...project} />
+            ))}
           </div>
         </div>
       </section>
