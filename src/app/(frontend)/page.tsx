@@ -103,7 +103,7 @@ export default async function Page() {
         id="portfolio"
       >
         <div className="container mx-auto grid grid-cols-1 gap-6 py-12 md:px-5 px-0">
-          <div className="px-10 md:px-0">
+          <div className="text-center">
             <h2 className="text-3xl font-bold tracking-wider text-slate-800 dark:text-slate-100 sm:text-4xl">
               Recent projects
             </h2>
