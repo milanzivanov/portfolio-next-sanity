@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 import { motion } from "framer-motion";
 
 type TitleProps = PropsWithChildren<{
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   text?: "uppercase" | "lowercase" | "capitalize";
   bold?: "normal" | "bold" | "semibold" | "extrabold";
 }>;
@@ -12,7 +12,8 @@ type TitleProps = PropsWithChildren<{
 const sizeClasses = {
   sm: "text-xl md:text-2xl lg:text-3xl",
   md: "text-2xl md:text-3xl lg:text-4xl",
-  lg: "text-2xl md:text-4xl lg:text-5xl"
+  lg: "text-2xl md:text-4xl lg:text-5xl",
+  xl: "text-3xl md:text-5xl lg:text-6xl"
 };
 
 const boldClasses = {
