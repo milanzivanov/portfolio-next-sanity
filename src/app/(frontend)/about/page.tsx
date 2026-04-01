@@ -2,7 +2,6 @@ import { Title } from "@/components/Title";
 import Image from "next/image";
 import Link from "next/link";
 
-// import aboutImage from "../../../../public/coding-about.webp";
 import personalPicture from "../../../../public/Milan_right.webp";
 import BackToHome from "@/components/BackToHome";
 
