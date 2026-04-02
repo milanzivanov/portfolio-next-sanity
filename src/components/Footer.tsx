@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="w-full bg-slate-50 dark:bg-slate-800">
+    <footer className="w-full">
       <div className="container mx-auto px-4 py-14">
         <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200/70 dark:border-slate-700/70 bg-white/80 dark:bg-slate-900/70 backdrop-blur p-8 sm:p-10 shadow-[0_10px_35px_rgba(0,0,0,0.08)]">
           <div className="text-center space-y-4">
