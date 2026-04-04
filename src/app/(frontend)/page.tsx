@@ -12,7 +12,7 @@ import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["800"],
+  weight: ["600", "700", "800"],
   display: "swap"
 });
 
@@ -33,10 +33,10 @@ export default async function Page() {
         id="hero"
         className="flex flex-col relative min-h-[calc(100vh-96px)] scroll-mt-[92px]"
       >
-        <div className="flex flex-col justify-center items-center  relative bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 dark:from-slate-900 dark:via-indigo-950 dark:to-purple-950">
+        <div className="flex flex-col justify-center items-center relative bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 dark:from-slate-900 dark:via-indigo-950 dark:to-purple-950">
           {/* top */}
-          <div className="container px-4">
-            <div className="relative min-h-[53vh] md:min-h-[80vh] mx-auto max-w-3xl lg:max-w-5xl lg:px-12 flex flex-col items-center justify-center text-center">
+          <div className="w-full px-4 relative bg-radial-lines">
+            <div className="relative min-h-[53vh] md:min-h-[75vh] mx-auto max-w-3xl lg:max-w-5xl lg:px-12 flex flex-col items-center justify-center text-center">
               <div className="flex flex-col pb-[64px] gap-5 items-center">
                 <div className="inline-flex items-center gap-2 text-sm py-1.5 px-4 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-mono border border-emerald-500/20 shadow-sm">
                   <span className="relative flex h-2 w-2">
@@ -48,12 +48,12 @@ export default async function Page() {
 
                 <Title size="xl" text="capitalize">
                   <span
-                    className={`${poppins.className} block font-extrabold tracking-wide text-3xl sm:text-4xl md:text-5xl lg:text-7xl bg-gradient-to-r from-[#0071bc] dark:from-[#ffffff] to-[#6366f1] dark:to-[#f3f3f3] bg-clip-text text-transparent`}
+                    className={`${poppins.className} block font-bold tracking-wide text-3xl sm:text-4xl md:text-5xl lg:text-7xl bg-gradient-to-r from-[#0071bc] dark:from-[#ffffff] to-[#6366f1] dark:to-[#f3f3f3] bg-clip-text text-transparent`}
                   >
                     Ideas into interfaces.
                   </span>
                   <span
-                    className={`${poppins.className} block font-extrabold tracking-wide text-xl sm:text-2xl md:text-3xl lg:text-6xl bg-gradient-to-r from-[#6366f1] to-[#8453D2] bg-clip-text text-transparent mt-1`}
+                    className={`${poppins.className} block font-bold tracking-wide text-xl sm:text-2xl md:text-3xl lg:text-6xl bg-gradient-to-r from-[#6366f1] to-[#8453D2] bg-clip-text text-transparent mt-1`}
                   >
                     Code into experience.
                   </span>

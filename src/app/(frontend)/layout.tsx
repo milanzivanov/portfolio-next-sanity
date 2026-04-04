@@ -8,10 +8,9 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Header from "@/components/Header";
-
-import "./../globals.css";
-
 import { Inter } from "next/font/google";
+
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Milan Portfolio - FD",

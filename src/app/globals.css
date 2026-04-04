@@ -33,3 +33,15 @@
 
   --default-transition-duration: 250ms;
 }
+
+@layer utilities {
+  .bg-radial-lines {
+    background-image: repeating-conic-gradient(
+      from 0deg,
+      rgba(99, 102, 241, 0.08) 0deg,
+      rgba(99, 102, 241, 0.08) 1deg,
+      transparent 1deg,
+      transparent 10deg
+    );
+  }
+}
