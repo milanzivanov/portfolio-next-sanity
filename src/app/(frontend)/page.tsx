@@ -38,14 +38,6 @@ export default async function Page() {
           <div className="w-full px-4 relative bg-radial-lines">
             <div className="relative min-h-[53vh] md:min-h-[75vh] mx-auto max-w-3xl lg:max-w-5xl lg:px-12 flex flex-col items-center justify-center text-center">
               <div className="flex flex-col pb-[64px] gap-5 items-center">
-                <div className="inline-flex items-center gap-2 text-sm py-1.5 px-4 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-mono border border-emerald-500/20 shadow-sm">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                  </span>
-                  <span>Available for work</span>
-                </div>
-
                 <Title size="xl" text="capitalize">
                   <span
                     className={`${poppins.className} block font-bold tracking-wide text-3xl sm:text-4xl md:text-5xl lg:text-7xl bg-gradient-to-r from-[#0071bc] dark:from-[#ffffff] to-[#6366f1] dark:to-[#f3f3f3] bg-clip-text text-transparent`}
