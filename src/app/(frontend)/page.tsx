@@ -35,9 +35,9 @@ export default async function Page() {
       >
         <div className="flex flex-col justify-center items-center relative bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 dark:from-slate-900 dark:via-indigo-950 dark:to-purple-950">
           {/* top */}
-          <div className="w-full px-4 relative bg-radial-lines">
-            <div className="relative min-h-[53vh] md:min-h-[75vh] mx-auto max-w-3xl lg:max-w-5xl lg:px-12 flex flex-col items-center justify-center text-center">
-              <div className="flex flex-col pb-[64px] gap-5 items-center">
+          <div className="w-full relative bg-radial-lines">
+            <div className="relative min-h-[65vh] md:min-h-[75vh] mx-auto max-w-3xl lg:max-w-5xl lg:px-12 flex flex-col items-center justify-center text-center">
+              <div className="flex flex-col gap-5 items-center">
                 <Title size="xl" text="capitalize">
                   <span
                     className={`${poppins.className} block font-bold tracking-wide text-3xl sm:text-4xl md:text-5xl lg:text-7xl bg-gradient-to-r from-[#0071bc] dark:from-[#ffffff] to-[#6366f1] dark:to-[#f3f3f3] bg-clip-text text-transparent`}
@@ -75,13 +75,33 @@ export default async function Page() {
           {/* bottom */}
           <div className="flex-1 flex flex-col justify-center items-center py-0 md:py-10">
             <div className="container bg-slate-100  dark:bg-slate-700 rounded-none md:rounded-2xl p-10 flex flex-col relative items-center mx-auto max-w-3xl space-y-6 lg:max-w-5xl lg:px-12 px-4">
-              <div className="prose sm:prose-lg md:prose-xl text-slate-900 dark:text-slate-50 prose-strong:text-slate-900 dark:prose-strong:text-slate-50 font-light text-center">
-                Hi, I&apos;m <strong>Milan</strong> - curiosity-driven{" "}
-                <strong>Frontend developer & AI Enthusiast</strong> with{" "}
-                <strong>2+ years</strong> of experience at{" "}
-                <strong>Vega IT Solution</strong>, <strong>OMA Adriatic</strong>{" "}
-                and <strong>HTEC</strong>. I specialize in crafting clean,
-                user-friendly digital experiences. 🚀
+              <div className="text-sm md:text-lg text-slate-900 dark:text-slate-50 dark:prose-strong:text-slate-50 font-light text-center">
+                Hi, I&apos;m{" "}
+                <strong className="font-semibold text-slate-900 dark:text-slate-50">
+                  Milan
+                </strong>{" "}
+                — curiosity-driven{" "}
+                <strong className="font-semibold text-slate-900 dark:text-slate-50">
+                  Frontend developer & AI Enthusiast
+                </strong>{" "}
+                with{" "}
+                <strong className="font-semibold text-slate-900 dark:text-slate-50">
+                  2+ years
+                </strong>{" "}
+                of experience at{" "}
+                <strong className="font-semibold text-slate-900 dark:text-slate-50">
+                  Vega IT Solution
+                </strong>
+                ,{" "}
+                <strong className="font-semibold text-slate-900 dark:text-slate-50">
+                  OMA Adriatic
+                </strong>{" "}
+                and{" "}
+                <strong className="font-semibold text-slate-900 dark:text-slate-50">
+                  HTEC
+                </strong>
+                . I specialize in crafting clean, user-friendly digital
+                experiences. 🚀
               </div>
             </div>
           </div>
