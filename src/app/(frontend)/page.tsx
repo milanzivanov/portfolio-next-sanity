@@ -80,7 +80,7 @@ export default async function Page() {
                 <strong className="font-semibold text-slate-900 dark:text-slate-50">
                   Milan
                 </strong>{" "}
-                — curiosity-driven{" "}
+                - curiosity-driven{" "}
                 <strong className="font-semibold text-slate-900 dark:text-slate-50">
                   Frontend developer & AI Enthusiast
                 </strong>{" "}
