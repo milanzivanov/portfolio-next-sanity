@@ -2,11 +2,40 @@
 import { useEffect, useState } from "react";
 import { LuSun, LuMoon } from "react-icons/lu";
 
+function playToggleSound(toDark: boolean) {
+  try {
+    const ctx = new AudioContext();
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    // toDark = lower pitch "thud", toLight = higher pitch "click"
+    const freq1 = toDark ? 300 : 600;
+    const freq2 = toDark ? 150 : 900;
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(freq1, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(freq2, ctx.currentTime + 0.08);
+
+    gain.gain.setValueAtTime(0.25, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.15);
+
+    osc.onended = () => ctx.close();
+  } catch {
+    // Web Audio API nije dostupan
+  }
+}
+
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    // On mount, check localStorage for theme, default to light
     const isDark = localStorage.theme === "dark";
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
@@ -17,6 +46,7 @@ export default function ThemeToggle() {
     setDark(newDark);
     document.documentElement.classList.toggle("dark", newDark);
     localStorage.theme = newDark ? "dark" : "light";
+    playToggleSound(newDark);
   };
 
   return (
