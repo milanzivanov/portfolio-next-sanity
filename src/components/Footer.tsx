@@ -1,24 +1,28 @@
 function Footer() {
   return (
-    <footer className="w-full">
-      <div className="container mx-auto px-4 py-14">
-        <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200/70 dark:border-slate-700/70 bg-white/80 dark:bg-slate-900/70 backdrop-blur p-8 sm:p-10 shadow-[0_10px_35px_rgba(0,0,0,0.08)]">
-          <div className="text-center space-y-4">
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-              Let&apos;s build something useful together
-            </h3>
+    <footer className="w-full bg-black dark:bg-black border-t border-white/8">
+      <div className="container mx-auto px-6 md:px-10 py-20">
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+          {/* monospace label — DESIGN.md */}
+          <p className="label-mono text-white">Get in touch</p>
 
-            <p className="text-slate-700 dark:text-slate-300 max-w-2xl mx-auto">
-              I&apos;d love to hear from you - whether you have a project idea,
-              a question, or just want to connect.
-            </p>
-          </div>
+          <h3 className="text-3xl sm:text-4xl font-bold tracking-heading text-white leading-tight">
+            Let&apos;s build something
+            <br />
+            useful together
+          </h3>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <p className="text-base tracking-body text-white/70 max-w-md mx-auto">
+            Whether you have a project idea, a question, or just want to connect
+            - I&apos;d love to hear from you.
+          </p>
+
+          {/* CTA buttons — DESIGN.md: white pill on dark */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <a
               href="mailto:milan.zivanov@gmail.com"
-              className="inline-flex items-center rounded-full bg-[#8453D2] hover:bg-[#6d3db8] px-5 py-2.5 text-white text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8453D2] dark:focus-visible:ring-offset-slate-900"
-              aria-label="Pošalji email Milanu"
+              className="rounded-full inline-flex items-center bg-white text-black hover:opacity-85 transition-opacity duration-200 px-6 py-2.5 font-medium text-sm focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+              aria-label="Send email to Milan"
             >
               Send Email
             </a>
@@ -27,8 +31,8 @@ function Footer() {
               href="https://www.linkedin.com/in/milan-%C5%BEivanov1983/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 px-4 py-2.5 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-              aria-label="LinkedIn profil"
+              className="rounded-full inline-flex items-center gap-2 border border-white/20 text-white hover:bg-white/8 transition-colors duration-200 px-5 py-2.5 text-sm focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+              aria-label="LinkedIn profile"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +50,8 @@ function Footer() {
               href="https://github.com/milanzivanov"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 px-4 py-2.5 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-              aria-label="GitHub profil"
+              className="rounded-full inline-flex items-center gap-2 border border-white/20 text-white hover:bg-white/8 transition-colors duration-200 px-5 py-2.5 text-sm focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+              aria-label="GitHub profile"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,9 +66,9 @@ function Footer() {
             </a>
           </div>
 
-          <p className="mt-7 text-center text-xs font-mono text-slate-600 dark:text-slate-400">
-            &copy; {new Date().getFullYear()} Milan Zivanov ·
-            <span className="ml-1">milan.zivanov@gmail.com</span>
+          <p className="label-mono text-white pt-4">
+            &copy; {new Date().getFullYear()} Milan Zivanov &middot;
+            milan.zivanov@gmail.com
           </p>
         </div>
       </div>
