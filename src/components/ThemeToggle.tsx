@@ -52,7 +52,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative inline-flex items-center w-20 h-10 rounded-full cursor-pointer transition-colors duration-300 bg-slate-300 dark:bg-blue-600 focus:outline-none"
+      className="relative inline-flex items-center w-20 h-10 rounded-full cursor-pointer transition-colors duration-300  bg-blue-600 dark:bg-slate-300 focus:outline-none"
       aria-label="Toggle Dark Mode"
       type="button"
     >

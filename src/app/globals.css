@@ -38,10 +38,45 @@
   .bg-radial-lines {
     background-image: repeating-conic-gradient(
       from 0deg,
-      rgba(99, 102, 241, 0.08) 0deg,
-      rgba(99, 102, 241, 0.08) 1deg,
+      rgba(255, 255, 255, 0.12) 0deg,
+      rgba(255, 255, 255, 0.12) 1deg,
       transparent 1deg,
-      transparent 10deg
+      transparent 15deg
     );
+  }
+
+  /* DESIGN.md — monospace uppercase label */
+  .label-mono {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+
+  /* DESIGN.md — negative letter-spacing scale */
+  .tracking-display {
+    letter-spacing: -0.04em;
+  }
+  .tracking-heading {
+    letter-spacing: -0.025em;
+  }
+  .tracking-body {
+    letter-spacing: -0.01em;
+  }
+
+  /* DESIGN.md — dashed focus outline */
+  .focus-dashed:focus-visible {
+    outline: 2px dashed currentColor;
+    outline-offset: 3px;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
   }
 }

@@ -1,82 +1,125 @@
-import { Title } from "@/components/Title";
 import Image from "next/image";
 import Link from "next/link";
 
 import personalPicture from "../../../../public/Milan_right.webp";
-import BackToHome from "@/components/BackToHome";
 
 export const metadata = {
-  title: "About page"
+  title: "About / Milan Portfolio"
 };
 
 function AboutPage() {
   return (
     <>
-      <div className="w-full min-h-[calc(100dvh-96px)] flex flex-col items-center justify-center">
-        <div className="max-w-5xl mx-auto">
-          <div className="w-full flex flex-col-reverse md:gap-5 md:flex-row-reverse">
-            <div className="relative bg-slate-100 flex flex-col justify-center md:rounded-md md:shadow-md space-y-1 md:space-y-3 p-5">
-              <Title size="sm" text="capitalize">
-                Bit about myself
-              </Title>
-              <p className="text-slate-800 text-base 2xl:text-lg">
-                Hi, I&apos;m Milan an enthusiastic front-end developer with 2+
-                years of experience at{" "}
-                <Link
-                  href="https://www.vegaitglobal.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-blue-500 dark:text-blue-700 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-                >
-                  Vega IT Solution
-                </Link>
-                (two-week internship),{" "}
-                <Link
-                  href="https://omadriatic.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-blue-500 dark:text-blue-700 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-                >
-                  OMA Adriatic
-                </Link>
-                , and{" "}
-                <Link
-                  href="https://htec.rs/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-blue-500 dark:text-blue-700 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-                >
-                  HTEC
-                </Link>
-                , I specialize in crafting clean, user-friendly digital
-                experiences.
-              </p>
-              <p className="text-slate-800 text-base 2xl:text-lg">
-                This is my little corner of the internet where I share my
-                thoughts and ideas. Let&apos;s connect I&apos;m open to
-                freelance opportunities and always eager to learn.
-              </p>
-              <p className="text-slate-800 text-base 2xl:text-lg">
-                Focused on mastering{" "}
-                <span className="font-semibold text-blue-500">Next.js</span> as
-                my core frontend framework and building my next career chapter
-                around it, while also leveraging{" "}
-                <span className="font-semibold text-blue-500">Sanity</span> as a
-                flexible and powerful headless CMS for content-driven
-                applications. 🚀
-              </p>
+      {/* ── BIO CONTENT ── */}
+      <div className="bg-white dark:bg-black min-h-[calc(100vh)] flex items-center justify-center">
+        <div className="container px-6 py-20 max-w-5xl mx-auto">
+          <div className="bg-black/4 dark:bg-white/5 border border-black/8 dark:border-white/10 rounded-3xl px-8 py-10 md:px-12 md:py-14">
+            {/* section label */}
+            <p className="label-mono text-black/40 dark:text-white/40 mb-10">
+              About Me
+            </p>
+
+            <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+              {/* photo */}
+              <div className="shrink-0 w-48 h-56 md:w-60 md:h-72 rounded-2xl overflow-hidden bg-black/5 dark:bg-white/8">
+                <Image
+                  className="object-cover w-full h-full"
+                  src={personalPicture}
+                  alt="Milan Zivanov"
+                  quality={85}
+                />
+              </div>
+
+              {/* text */}
+              <div className="space-y-5 text-base tracking-body leading-relaxed text-black/70 dark:text-white/70">
+                <p>
+                  Hi, I&apos;m{" "}
+                  <strong className="font-semibold text-black dark:text-white">
+                    Milan
+                  </strong>{" "}
+                  — an enthusiastic front-end developer with{" "}
+                  <strong className="font-semibold text-black dark:text-white">
+                    2+ years of experience
+                  </strong>{" "}
+                  at{" "}
+                  <Link
+                    href="https://www.vegaitglobal.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-black dark:text-white underline underline-offset-2 hover:opacity-60 transition-opacity duration-200 focus-dashed rounded-sm"
+                  >
+                    Vega IT Solution
+                  </Link>{" "}
+                  (two-week internship),{" "}
+                  <Link
+                    href="https://omadriatic.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-black dark:text-white underline underline-offset-2 hover:opacity-60 transition-opacity duration-200 focus-dashed rounded-sm"
+                  >
+                    OMA Adriatic
+                  </Link>
+                  , and{" "}
+                  <Link
+                    href="https://htec.rs/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-black dark:text-white underline underline-offset-2 hover:opacity-60 transition-opacity duration-200 focus-dashed rounded-sm"
+                  >
+                    HTEC
+                  </Link>
+                  . I specialize in crafting clean, user-friendly digital
+                  experiences.
+                </p>
+
+                <p>
+                  This is my little corner of the internet where I share my
+                  thoughts and ideas. I&apos;m open to freelance opportunities
+                  and always eager to learn.
+                </p>
+
+                <p>
+                  Focused on mastering{" "}
+                  <strong className="font-semibold text-black dark:text-white">
+                    Next.js
+                  </strong>{" "}
+                  as my core frontend framework and building my next career
+                  chapter around it, while also leveraging{" "}
+                  <strong className="font-semibold text-black dark:text-white">
+                    Sanity
+                  </strong>{" "}
+                  as a flexible and powerful headless CMS for content-driven
+                  applications.
+                </p>
+
+                {/* tech stack */}
+                <div className="pt-4">
+                  <p className="label-mono text-black/40 dark:text-white/40 mb-3">
+                    Tech Stack
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Next.js",
+                      "React",
+                      "TypeScript",
+                      "Tailwind CSS",
+                      "Sanity",
+                      "Node.js",
+                      "Figma",
+                      "AI/ML",
+                      "Git"
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className="label-mono text-black/60 dark:text-white/60 py-1 px-3 rounded-full border border-black/15 dark:border-white/15"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="relative md:max-w-[450px] flex bg-slate-100 md:rounded-md md:shadow-md">
-              <Image
-                className="object-cover"
-                src={personalPicture}
-                alt="Family sitting around a fire pit in front of cabin"
-                quality={80}
-              />
-            </div>
-          </div>
-          <div className="flex justify-end md:pt-5">
-            <BackToHome />
           </div>
         </div>
       </div>
