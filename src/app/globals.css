@@ -38,8 +38,8 @@
   .bg-radial-lines {
     background-image: repeating-conic-gradient(
       from 0deg,
-      rgba(255, 255, 255, 0.12) 0deg,
-      rgba(255, 255, 255, 0.12) 1deg,
+      rgba(255, 255, 255, 0.25) 0deg,
+      rgba(255, 255, 255, 0.25) 1deg,
       transparent 1deg,
       transparent 15deg
     );
