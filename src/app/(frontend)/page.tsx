@@ -33,7 +33,7 @@ export default async function Page() {
         className="relative flex flex-col min-h-dvh scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] overflow-hidden"
       >
         {/* radial lines overlay */}
-        <div className="absolute inset-0 bg-radial-lines opacity-0 md:opacity-15  dark:opacity-0 md:dark:opacity-15  pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-radial-lines opacity-100 pointer-events-none" /> */}
 
         {/* hero content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-24">

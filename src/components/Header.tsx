@@ -23,14 +23,14 @@ export default function Header() {
             href="/"
           >
             <Image
-              src="/logo-light-mode-2026.svg"
+              src="/logo-dark-mode-2026.svg"
               alt="Milan Zivanov main logo - light mode"
               width={42}
               height={42}
               className="mx-auto dark:hidden"
             />
             <Image
-              src="/logo-dark-mode-2026.svg"
+              src="/logo-white-mode-2026.svg"
               alt="Milan Zivanov main logo - dark mode"
               width={42}
               height={42}

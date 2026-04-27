@@ -35,15 +35,48 @@
 }
 
 @layer utilities {
-  .bg-radial-lines {
-    background-image: repeating-conic-gradient(
-      from 0deg,
-      rgba(255, 255, 255, 0.25) 0deg,
-      rgba(255, 255, 255, 0.25) 1deg,
-      transparent 1deg,
-      transparent 15deg
+  /* .bg-radial-lines {
+    background-image: conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(255, 255, 255, 0.08) 0deg,
+      rgba(255, 255, 255, 0) 12deg,
+      rgba(255, 255, 255, 0) 18deg,
+      rgba(255, 255, 255, 0.08) 30deg,
+      rgba(255, 255, 255, 0) 42deg,
+      rgba(255, 255, 255, 0) 48deg,
+      rgba(255, 255, 255, 0.08) 60deg,
+      rgba(255, 255, 255, 0) 72deg,
+      rgba(255, 255, 255, 0) 78deg,
+      rgba(255, 255, 255, 0.08) 90deg,
+      rgba(255, 255, 255, 0) 102deg,
+      rgba(255, 255, 255, 0) 108deg,
+      rgba(255, 255, 255, 0.08) 120deg,
+      rgba(255, 255, 255, 0) 132deg,
+      rgba(255, 255, 255, 0) 138deg,
+      rgba(255, 255, 255, 0.08) 150deg,
+      rgba(255, 255, 255, 0) 162deg,
+      rgba(255, 255, 255, 0) 168deg,
+      rgba(255, 255, 255, 0.08) 180deg,
+      rgba(255, 255, 255, 0) 192deg,
+      rgba(255, 255, 255, 0) 198deg,
+      rgba(255, 255, 255, 0.08) 210deg,
+      rgba(255, 255, 255, 0) 222deg,
+      rgba(255, 255, 255, 0) 228deg,
+      rgba(255, 255, 255, 0.08) 240deg,
+      rgba(255, 255, 255, 0) 252deg,
+      rgba(255, 255, 255, 0) 258deg,
+      rgba(255, 255, 255, 0.08) 270deg,
+      rgba(255, 255, 255, 0) 282deg,
+      rgba(255, 255, 255, 0) 288deg,
+      rgba(255, 255, 255, 0.08) 300deg,
+      rgba(255, 255, 255, 0) 312deg,
+      rgba(255, 255, 255, 0) 318deg,
+      rgba(255, 255, 255, 0.08) 330deg,
+      rgba(255, 255, 255, 0) 342deg,
+      rgba(255, 255, 255, 0) 348deg,
+      rgba(255, 255, 255, 0.08) 360deg
     );
-  }
+  } */
 
   /* DESIGN.md — monospace uppercase label */
   .label-mono {
