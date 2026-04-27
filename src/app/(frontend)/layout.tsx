@@ -30,9 +30,7 @@ export default async function FrontendLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section
-      className={`${inter.variable} bg-white dark:bg-black pt-24 md:pt-0`}
-    >
+    <section className={`${inter.variable} bg-white dark:bg-black pt-0`}>
       <main className="">
         <Header />
         {children}

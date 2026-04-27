@@ -30,7 +30,7 @@ export default async function Page() {
       {/* ── HERO ── vibrant gradient, white text, DESIGN.md style */}
       <div
         id="hero"
-        className="relative flex flex-col min-h-[100vh] scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] overflow-hidden"
+        className="relative flex flex-col min-h-dvh scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] overflow-hidden"
       >
         {/* radial lines overlay */}
         <div className="absolute inset-0 bg-radial-lines opacity-0 md:opacity-15  dark:opacity-0 md:dark:opacity-15  pointer-events-none" />
