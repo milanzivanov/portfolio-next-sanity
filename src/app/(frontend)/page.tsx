@@ -38,7 +38,10 @@ export default async function Page() {
         {/* <div className="absolute inset-0 bg-radial-lines opacity-100 pointer-events-none" /> */}
 
         {/* hero content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-12 md:py-16 xl:py-24">
+        <div
+          className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-12 md:py-16
+        "
+        >
           {/* monospace label — DESIGN.md: figmaMono uppercase, positive tracking */}
           <p className="label-mono text-white/70 mb-6">
             Frontend Developer & AI Enthusiast
@@ -47,16 +50,14 @@ export default async function Page() {
           {/* display heading — fluid responsive sizing */}
           <h1 className="max-w-4xl mx-auto w-full">
             <span
-              className={`${poppins.className} block font-bold text-white leading-[1.0] tracking-tight`}
-              style={{ fontSize: "clamp(2.75rem, 9vw, 6.5rem)" }}
+              className={`${poppins.className} block font-bold text-white leading-[1.0] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl`}
             >
               Ideas into
               <br />
               interfaces.
             </span>
             <span
-              className={`${poppins.className} block font-bold text-white/70 leading-[1.1] mt-2 tracking-tight`}
-              style={{ fontSize: "clamp(1.5rem, 5vw, 3.75rem)" }}
+              className={`${poppins.className} block font-bold text-white/70 leading-[1.1] mt-2 tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl`}
             >
               Code into experience.
             </span>
