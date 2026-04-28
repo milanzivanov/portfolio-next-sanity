@@ -11,7 +11,9 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
-  display: "swap"
+  display: "swap",
+  adjustFontFallback: false,
+  preload: true
 });
 
 export const metadata = {
@@ -30,13 +32,13 @@ export default async function Page() {
       {/* ── HERO ── vibrant gradient, white text, DESIGN.md style */}
       <div
         id="hero"
-        className="relative flex flex-col min-h-dvh scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] overflow-hidden"
+        className="relative flex flex-col h-dvh scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] overflow-hidden"
       >
         {/* radial lines overlay */}
         {/* <div className="absolute inset-0 bg-radial-lines opacity-100 pointer-events-none" /> */}
 
         {/* hero content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-24">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-12 md:py-16 xl:py-24">
           {/* monospace label — DESIGN.md: figmaMono uppercase, positive tracking */}
           <p className="label-mono text-white/70 mb-6">
             Frontend Developer & AI Enthusiast
