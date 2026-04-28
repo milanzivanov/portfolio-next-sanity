@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="fixed z-50 h-16 max-w-5xl mx-auto inset-0 px-5 rounded-bl-2xl rounded-br-2xl bg-white/90 dark:bg-white/50 backdrop-blur-xl border-b border-black/8 dark:border-white/20 flex items-center">
-      <div className="container py-3 px-6 md:px-10 2xl:px-0">
+      <div className="w-full py-3">
         <div className="flex items-center justify-between gap-5">
           <Link
             className="flex items-center gap-2 focus-dashed rounded-sm"

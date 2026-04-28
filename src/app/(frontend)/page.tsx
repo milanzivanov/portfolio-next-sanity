@@ -32,7 +32,7 @@ export default async function Page() {
       {/* ── HERO ── vibrant gradient, white text, DESIGN.md style */}
       <div
         id="hero"
-        className="relative flex flex-col h-dvh scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] overflow-hidden"
+        className="relative flex flex-col min-h-dvh scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)]"
       >
         {/* radial lines overlay */}
         {/* <div className="absolute inset-0 bg-radial-lines opacity-100 pointer-events-none" /> */}
@@ -50,14 +50,14 @@ export default async function Page() {
           {/* display heading — fluid responsive sizing */}
           <h1 className="max-w-4xl mx-auto w-full">
             <span
-              className={`${poppins.className} block font-bold text-white leading-[1.0] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl`}
+              className={`${poppins.className} block font-bold text-white leading-[1.0] tracking-tight text-5xl md:text-6xl xl:text-9xl`}
             >
               Ideas into
               <br />
               interfaces.
             </span>
             <span
-              className={`${poppins.className} block font-bold text-white/70 leading-[1.1] mt-2 tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl`}
+              className={`${poppins.className} block font-bold text-white/70 leading-[1.1] mt-2 tracking-tight text-3xl  md:text-4xl xl:text-7xl`}
             >
               Code into experience.
             </span>
@@ -89,9 +89,11 @@ export default async function Page() {
             </Link>
           </div>
         </div>
+      </div>
 
-        {/* bio strip — DESIGN.md: white card on gradient */}
-        <div className="max-w-5xl mx-auto relative z-10 bg-white dark:bg-black border-t border-black/8 dark:border-white/8 rounded-tl-2xl rounded-tr-2xl py-8 px-6">
+      {/* bio strip */}
+      <div className="bg-white dark:bg-black border-t border-black/8 dark:border-white/8">
+        <div className="max-w-5xl mx-auto py-8 px-6">
           <p className="max-w-3xl mx-auto text-center text-base tracking-body text-black/70 dark:text-white/70 leading-relaxed">
             Hi, I&apos;m{" "}
             <strong className="font-semibold text-black dark:text-white">
