@@ -94,6 +94,7 @@ export default async function Page() {
       {/* bio strip */}
       <div className="bg-white dark:bg-black border-t border-black/8 dark:border-white/8">
         <div className="max-w-5xl mx-auto py-8 px-6">
+          <p className="label-mono text-black/40 dark:text-white/40 text-center mb-3">Short intro</p>
           <p className="max-w-3xl mx-auto text-center text-base tracking-body text-black/70 dark:text-white/70 leading-relaxed">
             Hi, I&apos;m{" "}
             <strong className="font-semibold text-black dark:text-white">

@@ -11,9 +11,9 @@ function AboutPage() {
   return (
     <>
       {/* ── BIO CONTENT ── */}
-      <div className="bg-white dark:bg-black min-h-[calc(100vh)] flex items-center justify-center">
+      <div className="bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] min-h-[calc(100vh)] flex items-center justify-center">
         <div className="container px-6 py-20 max-w-5xl mx-auto">
-          <div className="bg-black/4 dark:bg-white/5 border border-black/8 dark:border-white/10 rounded-3xl px-8 py-10 md:px-12 md:py-14">
+          <div className="bg-slate-200 dark:bg-white/5 border border-black/8 dark:border-white/10 rounded-3xl px-8 py-10 md:px-12 md:py-14">
             {/* section label */}
             <p className="label-mono text-black/40 dark:text-white/40 mb-10">
               About Me
