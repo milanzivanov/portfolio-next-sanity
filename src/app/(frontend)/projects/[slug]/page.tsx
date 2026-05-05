@@ -39,7 +39,7 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <main className="container mx-auto grid grid-cols-1 py-4 px-0 min-h-[calc(100vh-96px)]">
+    <main className="container mx-auto grid grid-cols-1 pt-16 md:pt-18 xl:pt-24 py-4 px-0 w-full min-h-dvh">
       <Project {...project} />
     </main>
   );
