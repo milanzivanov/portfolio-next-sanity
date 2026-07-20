@@ -37,6 +37,9 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const isDark = localStorage.theme === "dark";
+    // localStorage isn't available during SSR, so the initial theme can only
+    // be read here, on mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
   }, []);
