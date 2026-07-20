@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(pnpm -v)",
+      "PowerShell(pnpm dev)",
+      "PowerShell($max=15; for\\($i=0;$i -lt $max;$i++\\){ try { $r = Invoke-WebRequest -Uri http://localhost:3000 -UseBasicParsing -TimeoutSec 3; Write-Output \"STATUS $\\($r.StatusCode\\)\"; break } catch { Start-Sleep -Seconds 2 } })",
+      "Bash(pnpm -v)",
+      "Bash(npm view *)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm exec *)"
+    ]
+  }
+}

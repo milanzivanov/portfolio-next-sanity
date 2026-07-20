@@ -22,5 +22,5 @@ A high-performance portfolio engineered to bridge the gap between creative desig
 First, install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
