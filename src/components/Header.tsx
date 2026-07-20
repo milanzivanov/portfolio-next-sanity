@@ -54,7 +54,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="https://drive.google.com/file/d/13aQ5ZbRKbCe4txSbA0dzT6iAPbgSArWP/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1GP8whHCiFCFzft2b40VGoB-xEEUipf4k/view?usp=sharing"
                     className={`focus-dashed rounded-sm hover:opacity-60 transition-opacity duration-200 `}
                   >
                     Cv
