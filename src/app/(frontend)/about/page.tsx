@@ -1,17 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-import personalPicture from "../../../../public/Milan_right.webp";
-
-export const metadata = {
-  title: "About / Milan Portfolio"
+export const metadata: Metadata = {
+  title: "About / Milan Portfolio",
+  description:
+    "About Milan Zivanov - a frontend developer with experience at Vega IT Solution, OMA Adriatic, and HTEC, specializing in Next.js, TypeScript, and Sanity-powered web experiences."
 };
 
 function AboutPage() {
   return (
-    <>
-      {/* ── BIO CONTENT ── */}
-      <div className="bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] min-h-[calc(100vh)] flex items-center justify-center">
+    <div className="bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)] min-h-[calc(100vh)] flex items-center justify-center">
         <div className="container px-6 py-20 max-w-5xl mx-auto">
           <div className="bg-slate-200 dark:bg-white/5 border border-black/8 dark:border-white/10 rounded-3xl px-8 py-10 md:px-12 md:py-14">
             {/* section label */}
@@ -21,10 +20,12 @@ function AboutPage() {
 
             <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
               {/* photo */}
-              <div className="shrink-0 w-48 h-56 md:w-60 md:h-72 rounded-2xl overflow-hidden bg-black/5 dark:bg-white/8">
+              <div className="relative shrink-0 w-48 h-56 md:w-60 md:h-72 rounded-2xl overflow-hidden bg-black/5 dark:bg-white/8">
                 <Image
-                  className="object-cover w-full h-full"
-                  src={personalPicture}
+                  priority
+                  fill
+                  className="object-cover"
+                  src="/Milan_right.webp"
                   alt="Milan Zivanov"
                   quality={85}
                 />
@@ -123,7 +124,6 @@ function AboutPage() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 export default AboutPage;
