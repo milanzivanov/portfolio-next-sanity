@@ -1,4 +1,4 @@
-import { draftMode } from "next/headers";
+import { cookies, draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
 
@@ -29,10 +29,12 @@ export default async function FrontendLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isAdmin = (await cookies()).get("admin_session")?.value === "1";
+
   return (
     <section className={`${inter.variable} bg-white dark:bg-black pt-0`}>
       <main className="">
-        <Header />
+        <Header isAdmin={isAdmin} />
         {children}
         <SanityLive />
         {(await draftMode()).isEnabled && (

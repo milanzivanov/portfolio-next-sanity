@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 
-export default function Header() {
+export default function Header({ isAdmin }: { isAdmin: boolean }) {
   // not in use for now
   // const { data: settings } = await sanityFetch({
   //   query: settingsQuery
@@ -60,6 +60,17 @@ export default function Header() {
                     Cv
                   </Link>
                 </li>
+
+                {isAdmin && (
+                  <li>
+                    <Link
+                      href="/studio"
+                      className={`focus-dashed rounded-sm hover:opacity-60 transition-opacity duration-200 ${pathname.startsWith("/studio") ? "underline underline-offset-4" : ""}`}
+                    >
+                      Studio
+                    </Link>
+                  </li>
+                )}
 
                 <li className="hidden md:flex">
                   <Link
