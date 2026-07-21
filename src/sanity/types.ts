@@ -387,6 +387,12 @@ export type PROJECTS_QUERYResult = Array<{
 export type PROJECTS_SLUGS_QUERYResult = Array<{
   slug: string | null;
 }>;
+// Variable: SKILLS_QUERY
+// Query: *[_type == "skill"] | order(name asc) {    _id,    name  }
+export type SKILLS_QUERYResult = Array<{
+  _id: string;
+  name: string | null;
+}>;
 // Variable: PROJECT_QUERY
 // Query: *[_type == "project" && slug.current == $slug][0] {   _id,  title,  body,  mainImage,  publishedAt,  url,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }  }
 export type PROJECT_QUERYResult = {
@@ -466,6 +472,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "\n  *[_type == \"project\" && defined(slug.current)] | order(publishedAt desc) {\n  _id,\n  title,\n  slug,\n  mainImage,\n  publishedAt,\n  url,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  },\n    \"technologies\": technologies[]->{\n      _id,\n      name,\n      slug,\n      icon,\n      level,\n      category,\n      description,\n      yearsExperience\n    }\n  }\n": PROJECTS_QUERYResult;
     "*[_type == \"project\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": PROJECTS_SLUGS_QUERYResult;
+    "\n  *[_type == \"skill\"] | order(name asc) {\n    _id,\n    name\n  }\n": SKILLS_QUERYResult;
     "\n  *[_type == \"project\" && slug.current == $slug][0] {\n   _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  url,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n  }\n": PROJECT_QUERYResult;
   }
 }

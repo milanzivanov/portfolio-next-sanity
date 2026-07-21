@@ -38,6 +38,13 @@ export const PROJECTS_SLUGS_QUERY =
   "slug": slug.current
 }`);
 
+export const SKILLS_QUERY = defineQuery(`
+  *[_type == "skill"] | order(name asc) {
+    _id,
+    name
+  }
+`);
+
 export const PROJECT_QUERY = defineQuery(`
   *[_type == "project" && slug.current == $slug][0] {
    _id,

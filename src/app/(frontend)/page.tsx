@@ -15,7 +15,7 @@ const poppins = Poppins({
   preload: true
 });
 
-export default async function Page() {
+export default async function HomePage() {
   const { data: projects } = await sanityFetch({
     query: PROJECTS_QUERY
   });
