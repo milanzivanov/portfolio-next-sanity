@@ -1,6 +1,5 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
-import { PROJECTS_QUERYResult } from "@/sanity/types";
 
 import { ProjectCard } from "@/components/ProjectCard";
 import { Title } from "@/components/Title";
@@ -16,7 +15,7 @@ export default async function Page() {
         <Title size="md">Portfolio</Title>
       </div>
       <div className="flex flex-col gap-12">
-        {projects.map((project: PROJECTS_QUERYResult[0]) => (
+        {projects.map((project) => (
           <ProjectCard key={project._id} {...project} />
         ))}
       </div>

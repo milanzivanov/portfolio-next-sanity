@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(PROJECTS_SLUGS_QUERY);
-  return slugs.map((s: { slug: string }) => ({ slug: s.slug }));
+  return slugs
+    .filter((s): s is { slug: string } => s.slug !== null)
+    .map((s) => ({ slug: s.slug }));
 }
 
 export default async function Page({ params }: Props) {

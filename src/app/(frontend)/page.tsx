@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectCard";
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
-import { PROJECTS_QUERYResult } from "@/sanity/types";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 import RevealOnScroll from "@/components/RevealOnScroll";
@@ -16,12 +15,6 @@ const poppins = Poppins({
   preload: true
 });
 
-export const metadata = {
-  title: "Welcome / Milan Portfolio",
-  description:
-    "Milan Zivanov - Frontend Developer - Welcome to my personal website and portfolio showcasing my past work. Explore and witness my frontend skills! Feel free to reach out for any inquiries or opportunities to collaborate. This is the portfolio made in next.js and it is my first next.js project but not last"
-};
-
 export default async function Page() {
   const { data: projects } = await sanityFetch({
     query: PROJECTS_QUERY
@@ -34,6 +27,9 @@ export default async function Page() {
         id="hero"
         className="relative flex flex-col min-h-dvh scroll-mt-[92px] bg-[linear-gradient(135deg,#4f46e5_0%,#7c3aed_30%,#9333ea_60%,#4f46e5_100%)] dark:bg-[linear-gradient(135deg,#0f0a1e_0%,#1a0a2e_30%,#150520_60%,#0f0a1e_100%)]"
       >
+        {/* radial lines overlay */}
+        {/* <div className="absolute inset-0 bg-radial-lines opacity-100 pointer-events-none" /> */}
+
         {/* hero content */}
         <div
           className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-12 md:py-16
@@ -126,7 +122,7 @@ export default async function Page() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project: PROJECTS_QUERYResult[0], index: number) => (
+            {projects.map((project, index) => (
               <RevealOnScroll key={project._id} delay={index * 80}>
                 <ProjectCard {...project} />
               </RevealOnScroll>
