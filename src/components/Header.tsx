@@ -20,6 +20,7 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
         <div className="flex items-center justify-between gap-5">
           <Link
             className="flex items-center gap-1.5 focus-dashed rounded-sm"
+            rel="noopener noreferrer"
             href="/"
           >
             <Image
@@ -47,6 +48,7 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
                 <li>
                   <Link
                     href="/about"
+                    rel="noopener noreferrer"
                     className={`focus-dashed rounded-sm hover:opacity-60 transition-opacity duration-200 ${pathname === "/about" ? "underline underline-offset-4" : ""}`}
                   >
                     About
@@ -54,10 +56,12 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
                 </li>
                 <li>
                   <Link
-                    href="https://drive.google.com/file/d/1GP8whHCiFCFzft2b40VGoB-xEEUipf4k/view?usp=sharing"
+                    href="/Milan_Zivanov_CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`focus-dashed rounded-sm hover:opacity-60 transition-opacity duration-200 `}
                   >
-                    Cv
+                    Download CV
                   </Link>
                 </li>
 
@@ -65,6 +69,7 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
                   <li>
                     <Link
                       href="/studio"
+                      rel="noopener noreferrer"
                       className={`focus-dashed rounded-sm hover:opacity-60 transition-opacity duration-200 ${pathname.startsWith("/studio") ? "underline underline-offset-4" : ""}`}
                     >
                       Studio

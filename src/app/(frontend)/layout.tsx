@@ -13,9 +13,9 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Milan Portfolio - FD",
+  title: "Portfolio of Milan Zivanov — Frontend Developer",
   description:
-    "Milan Zivanov - Frontend Developer - Welcome to my personal website and portfolio showcasing my past work. Explore and witness my frontend skills! Feel free to reach out for any inquiries or opportunities to collaborate. This is the portfolio made in next.js and it is my first next.js project but not last"
+    "Portfolio of Milan Zivanov — Frontend Developer specializing in Next.js, React, and AI-assisted development."
 };
 
 const inter = Inter({
