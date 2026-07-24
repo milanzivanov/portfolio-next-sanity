@@ -2,6 +2,15 @@
 
 import { PropsWithChildren } from "react";
 import { motion } from "framer-motion";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+  adjustFontFallback: false,
+  preload: true
+});
 
 type TitleProps = PropsWithChildren<{
   size?: "sm" | "md" | "lg" | "xl";
@@ -34,7 +43,7 @@ export function Title({
       initial={{ opacity: 0, x: -40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
-      className={`${sizeClasses[size]} ${text} ${boldClasses[bold]} tracking-widest text-slate-800 dark:text-blue-600`}
+      className={`${poppins.className} ${sizeClasses[size]} ${text} ${boldClasses[bold]} tracking-heading text-black dark:text-white`}
     >
       {children}
     </motion.h1>

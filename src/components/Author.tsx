@@ -15,11 +15,11 @@ export function Author({ author }: AuthorProps) {
           width={80}
           height={80}
           alt={author.name || ""}
-          className="bg-slate-50 size-10 shadow-inner rounded-full"
+          className="bg-black/5 dark:bg-white/8 size-10 rounded-full"
         />
       ) : null}
       {author?.name ? (
-        <p className="text-base text-slate-800 dark:text-slate-50">
+        <p className="text-base tracking-body text-black/70 dark:text-white/70">
           {author.name}
         </p>
       ) : null}

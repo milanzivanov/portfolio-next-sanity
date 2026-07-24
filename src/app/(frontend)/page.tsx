@@ -124,7 +124,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <RevealOnScroll key={project._id} delay={index * 80}>
-                <ProjectCard {...project} />
+                <ProjectCard {...project} priority={index === 0} />
               </RevealOnScroll>
             ))}
           </div>

@@ -7,56 +7,73 @@ import { PublishedAt } from "@/components/PublishedAt";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
 
 import { motion } from "framer-motion";
 
-export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
-  const { title, author, mainImage, publishedAt, categories, technologies } =
-    props;
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  display: "swap",
+  adjustFontFallback: false,
+  preload: true
+});
+
+export function ProjectCard(
+  props: PROJECTS_QUERYResult[0] & { priority?: boolean }
+) {
+  const {
+    title,
+    author,
+    mainImage,
+    publishedAt,
+    categories,
+    technologies,
+    priority = false
+  } = props;
 
   return (
-    <Link className="group" href={`/projects/${props.slug!.current}`}>
+    <Link
+      className="group block rounded-2xl focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black dark:focus-visible:outline-white"
+      href={`/projects/${props.slug!.current}`}
+    >
       <motion.article
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="group bg-slate-100 dark:bg-slate-900 shadow-md flex flex-col gap-0 rounded-lg transition-colors hover:bg-white dark:hover:bg-slate-700 overflow-hidden"
+        className="bg-white dark:bg-white/5 border border-black/8 dark:border-white/10 flex flex-col gap-0 rounded-2xl overflow-hidden"
       >
-        <div className="relative w-full rounded-t-lg overflow-hidden">
-          <div className="w-full h-full absolute top-0 bg-slate-100/30 group-hover:bg-transparent transition-colors z-10"></div>
-
-          {mainImage ? (
+        {mainImage ? (
+          <div className="relative w-full overflow-hidden">
             <Image
               src={urlFor(mainImage).width(800).height(450).url()}
               width={800}
               height={450}
               alt={mainImage.alt || title || ""}
+              priority={priority}
               className="w-full h-auto"
             />
-          ) : null}
-        </div>
-        <div className="flex flex-col gap-2 p-6">
-          <div>
+          </div>
+        ) : null}
+        <div className="flex flex-col gap-3 p-6">
+          <div className="flex flex-wrap gap-2">
             <Categories categories={categories} />
           </div>
-          <h2 className="text-2xl text-pretty font-semibold text-slate-800 dark:text-blue-500 transition-colors relative">
-            <span className="relative z-[1]">{title}</span>
-            <span className="z-0 absolute inset-0 rounded-lg opacity-0 transition-all group-hover:opacity-100 group-hover:scale-y-110 group-hover:scale-x-105 scale-75"></span>
+          <h2
+            className={`${poppins.className} text-2xl text-pretty font-semibold tracking-heading text-black dark:text-white transition-opacity duration-200 group-hover:opacity-70`}
+          >
+            {title}
           </h2>
           {technologies && technologies.length > 0 && (
-            <div className="flex">
-              <span className="text-sm text-slate-800 dark:text-slate-50">
-                (
-                {technologies
-                  .map((tech) => tech.name)
-                  .filter(Boolean)
-                  .join(", ")}
-                )
-              </span>
-            </div>
+            <p className="label-mono text-black/40 dark:text-white/40">
+              {technologies
+                .map((tech) => tech.name)
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
           )}
-          <div className="flex items-center gap-x-6">
+          <div className="flex items-center gap-x-6 pt-1">
             <Author author={author} />
             <PublishedAt publishedAt={publishedAt} />
           </div>

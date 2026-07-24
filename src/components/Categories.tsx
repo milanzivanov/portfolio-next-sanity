@@ -8,7 +8,7 @@ export function Categories({ categories }: CategoriesProps) {
   return categories.map((category) => (
     <span
       key={category._id}
-      className="bg-blue-100 rounded-full px-3 py-1 leading-none whitespace-nowrap text-sm font-semibold text-slate-700"
+      className="label-mono text-black/60 dark:text-white/60 py-1 px-3 rounded-full border border-black/15 dark:border-white/15"
     >
       {category.title}
     </span>

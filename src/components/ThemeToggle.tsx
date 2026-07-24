@@ -55,21 +55,19 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative inline-flex items-center w-20 h-10 md:w-14 md:h-7 lg:w-[4.5rem] lg:h-9 rounded-full cursor-pointer transition-colors duration-300 bg-blue-600 dark:bg-slate-300 focus:outline-none"
+      className="relative inline-flex items-center w-16 h-11 rounded-full cursor-pointer transition-colors duration-300 bg-blue-600 dark:bg-slate-300 focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black dark:focus-visible:outline-white"
       aria-label="Toggle Dark Mode"
       type="button"
     >
       <span
-        className={`absolute left-1 flex items-center justify-center w-8 h-8 md:w-5 md:h-5 lg:w-7 lg:h-7 rounded-full bg-white shadow transition-transform duration-300 ${
-          dark
-            ? "translate-x-10 md:translate-x-7 lg:translate-x-9"
-            : "translate-x-0"
+        className={`absolute left-1 flex items-center justify-center w-9 h-9 rounded-full bg-white shadow transition-transform duration-300 ${
+          dark ? "translate-x-5" : "translate-x-0"
         }`}
       >
         {dark ? (
-          <LuMoon className="w-4 h-4 md:w-3 md:h-3 lg:w-4 lg:h-4 text-blue-600" />
+          <LuMoon className="w-5 h-5 text-blue-600" />
         ) : (
-          <LuSun className="w-4 h-4 md:w-3 md:h-3 lg:w-4 lg:h-4 text-slate-400" />
+          <LuSun className="w-5 h-5 text-slate-400" />
         )}
       </span>
     </button>

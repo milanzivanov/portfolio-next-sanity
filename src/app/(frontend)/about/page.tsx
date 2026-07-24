@@ -28,6 +28,7 @@ export default async function AboutPage() {
               <Image
                 priority
                 fill
+                sizes="(min-width: 768px) 240px, 192px"
                 className="object-cover"
                 src="/Milan_right.webp"
                 alt="Milan Zivanov"
