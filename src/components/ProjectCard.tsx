@@ -45,14 +45,14 @@ export function ProjectCard(
         className="bg-white dark:bg-white/5 border border-black/8 dark:border-white/10 flex flex-col gap-0 rounded-2xl overflow-hidden"
       >
         {mainImage ? (
-          <div className="relative w-full overflow-hidden">
+          <div className="relative w-full aspect-[16/9] overflow-hidden">
             <Image
               src={urlFor(mainImage).width(800).height(450).url()}
-              width={800}
-              height={450}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
               alt={mainImage.alt || title || ""}
               priority={priority}
-              className="w-full h-auto"
+              className="object-cover"
             />
           </div>
         ) : null}
@@ -61,7 +61,7 @@ export function ProjectCard(
             <Categories categories={categories} />
           </div>
           <h2
-            className={`${poppins.className} text-2xl text-pretty font-semibold tracking-heading text-black dark:text-white transition-opacity duration-200 group-hover:opacity-70`}
+            className={`${poppins.className} text-2xl text-pretty font-semibold tracking-heading capitalize text-black dark:text-white transition-opacity duration-200 group-hover:opacity-70`}
           >
             {title}
           </h2>

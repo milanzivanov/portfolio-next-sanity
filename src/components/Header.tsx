@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
@@ -13,9 +14,23 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
   // });
 
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed z-50 h-18 md:h-14 xl:h-20 max-w-5xl md:max-w-3xl xl:max-w-5xl mx-auto inset-0 px-5 rounded-bl-2xl rounded-br-2xl bg-white/90 dark:bg-white/50 backdrop-blur-xl border-b border-black/8 dark:border-white/20 flex items-center">
+    <header
+      className={`fixed z-50 h-18 md:h-14 xl:h-20 max-w-5xl md:max-w-3xl xl:max-w-5xl mx-auto inset-0 px-5 rounded-bl-2xl rounded-br-2xl backdrop-blur-xl border-b flex items-center transition-colors duration-300 ease-out ${
+        scrolled
+          ? "bg-white/90 dark:bg-white/50 border-black/8 dark:border-white/20"
+          : "bg-transparent border-transparent"
+      }`}
+    >
       <div className="w-full py-2">
         <div className="flex items-center justify-between gap-5">
           <Link
@@ -28,14 +43,14 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
               alt="Milan Zivanov main logo - light mode"
               width={42}
               height={42}
-              className="mx-auto dark:hidden w-8 h-8 md:w-[42px] md:h-[42px]"
+              className={`mx-auto w-8 h-8 md:w-[42px] md:h-[42px] ${scrolled ? "dark:hidden" : "hidden"}`}
             />
             <Image
               src="/logo-white-mode-2026.svg"
               alt="Milan Zivanov main logo - dark mode"
               width={42}
               height={42}
-              className="mx-auto hidden dark:block w-8 h-8 md:w-[42px] md:h-[42px]"
+              className={`mx-auto w-8 h-8 md:w-[42px] md:h-[42px] ${scrolled ? "hidden dark:block" : "block"}`}
             />
           </Link>
 
@@ -43,7 +58,9 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
             <nav>
               <ul
                 role="list"
-                className="flex items-center gap-3 md:gap-5 leading-5 text-base md:text-sm tracking-body font-mono text-black dark:text-white"
+                className={`flex items-center gap-3 md:gap-5 leading-5 text-base md:text-sm tracking-body font-mono transition-colors duration-300 ease-out ${
+                  scrolled ? "text-black dark:text-white" : "text-white"
+                }`}
               >
                 <li>
                   <Link

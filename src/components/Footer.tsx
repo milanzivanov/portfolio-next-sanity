@@ -67,8 +67,7 @@ function Footer() {
           </div>
 
           <p className="label-mono text-white pt-4">
-            &copy; {new Date().getFullYear()} Milan Zivanov &middot;
-            milan.zivanov@gmail.com
+            {`© ${new Date().getFullYear()} Milan Zivanov · milan.zivanov@gmail.com`}
           </p>
         </div>
       </div>

@@ -50,7 +50,7 @@ export default async function HomePage() {
               interfaces.
             </span>
             <span
-              className={`${poppins.className} block font-bold text-white/70 leading-[1.1] mt-2 tracking-tight text-3xl  md:text-4xl xl:text-7xl`}
+              className={`${poppins.className} block font-bold text-white leading-[1.1] mt-2 tracking-tight text-3xl  md:text-4xl xl:text-7xl`}
             >
               Code into experience.
             </span>
