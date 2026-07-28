@@ -21,18 +21,7 @@ export type Skill = {
   _rev: string;
   name?: string;
   slug?: Slug;
-  icon?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
+  icon?: "react" | "nextdotjs" | "typescript" | "javascript" | "tailwindcss" | "html5" | "css3" | "nodedotjs" | "sanity" | "supabase" | "prisma" | "clerk" | "git" | "github" | "figma" | "vercel" | "ai";
   level?: "Beginner" | "Intermediate" | "Expert";
   category?: string;
   description?: string;
@@ -364,18 +353,7 @@ export type PROJECTS_QUERYResult = Array<{
     _id: string;
     name: string | null;
     slug: Slug | null;
-    icon: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      _type: "image";
-    } | null;
+    icon: "ai" | "clerk" | "css3" | "figma" | "git" | "github" | "html5" | "javascript" | "nextdotjs" | "nodedotjs" | "prisma" | "react" | "sanity" | "supabase" | "tailwindcss" | "typescript" | "vercel" | null;
     level: "Beginner" | "Expert" | "Intermediate" | null;
     category: string | null;
     description: string | null;
@@ -388,10 +366,11 @@ export type PROJECTS_SLUGS_QUERYResult = Array<{
   slug: string | null;
 }>;
 // Variable: SKILLS_QUERY
-// Query: *[_type == "skill"] | order(name asc) {    _id,    name  }
+// Query: *[_type == "skill"] | order(name asc) {    _id,    name,    icon  }
 export type SKILLS_QUERYResult = Array<{
   _id: string;
   name: string | null;
+  icon: "ai" | "clerk" | "css3" | "figma" | "git" | "github" | "html5" | "javascript" | "nextdotjs" | "nodedotjs" | "prisma" | "react" | "sanity" | "supabase" | "tailwindcss" | "typescript" | "vercel" | null;
 }>;
 // Variable: PROJECT_QUERY
 // Query: *[_type == "project" && slug.current == $slug][0] {   _id,  title,  body,  mainImage,  publishedAt,  url,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  author->{    name,    image  }  }
@@ -472,7 +451,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "\n  *[_type == \"project\" && defined(slug.current)] | order(publishedAt desc) {\n  _id,\n  title,\n  slug,\n  mainImage,\n  publishedAt,\n  url,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  },\n    \"technologies\": technologies[]->{\n      _id,\n      name,\n      slug,\n      icon,\n      level,\n      category,\n      description,\n      yearsExperience\n    }\n  }\n": PROJECTS_QUERYResult;
     "*[_type == \"project\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": PROJECTS_SLUGS_QUERYResult;
-    "\n  *[_type == \"skill\"] | order(name asc) {\n    _id,\n    name\n  }\n": SKILLS_QUERYResult;
+    "\n  *[_type == \"skill\"] | order(name asc) {\n    _id,\n    name,\n    icon\n  }\n": SKILLS_QUERYResult;
     "\n  *[_type == \"project\" && slug.current == $slug][0] {\n   _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  url,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n  }\n": PROJECT_QUERYResult;
   }
 }

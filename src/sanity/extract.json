@@ -52,69 +52,77 @@
       "icon": {
         "type": "objectAttribute",
         "value": {
-          "type": "object",
-          "attributes": {
-            "asset": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "object",
-                "attributes": {
-                  "_ref": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string"
-                    }
-                  },
-                  "_type": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string",
-                      "value": "reference"
-                    }
-                  },
-                  "_weak": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "boolean"
-                    },
-                    "optional": true
-                  }
-                },
-                "dereferencesTo": "sanity.imageAsset"
-              },
-              "optional": true
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "react"
             },
-            "media": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "unknown"
-              },
-              "optional": true
+            {
+              "type": "string",
+              "value": "nextdotjs"
             },
-            "hotspot": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "inline",
-                "name": "sanity.imageHotspot"
-              },
-              "optional": true
+            {
+              "type": "string",
+              "value": "typescript"
             },
-            "crop": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "inline",
-                "name": "sanity.imageCrop"
-              },
-              "optional": true
+            {
+              "type": "string",
+              "value": "javascript"
             },
-            "_type": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "string",
-                "value": "image"
-              }
+            {
+              "type": "string",
+              "value": "tailwindcss"
+            },
+            {
+              "type": "string",
+              "value": "html5"
+            },
+            {
+              "type": "string",
+              "value": "css3"
+            },
+            {
+              "type": "string",
+              "value": "nodedotjs"
+            },
+            {
+              "type": "string",
+              "value": "sanity"
+            },
+            {
+              "type": "string",
+              "value": "supabase"
+            },
+            {
+              "type": "string",
+              "value": "prisma"
+            },
+            {
+              "type": "string",
+              "value": "clerk"
+            },
+            {
+              "type": "string",
+              "value": "git"
+            },
+            {
+              "type": "string",
+              "value": "github"
+            },
+            {
+              "type": "string",
+              "value": "figma"
+            },
+            {
+              "type": "string",
+              "value": "vercel"
+            },
+            {
+              "type": "string",
+              "value": "ai"
             }
-          }
+          ]
         },
         "optional": true
       },

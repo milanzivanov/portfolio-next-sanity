@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { sanityFetch } from "@/sanity/lib/live";
 import { SKILLS_QUERY } from "@/sanity/lib/queries";
+import { SkillIcon } from "@/components/SkillIcon";
 
 export const metadata: Metadata = {
   title: "About / Milan Portfolio",
@@ -107,8 +108,9 @@ export default async function AboutPage() {
                   {skills.map((skill) => (
                     <span
                       key={skill._id}
-                      className="label-mono text-black/60 dark:text-white/60 py-1 px-3 rounded-full border border-black/15 dark:border-white/15"
+                      className="label-mono inline-flex items-center gap-1.5 text-black/60 dark:text-white/60 py-1 px-3 rounded-full border border-black/15 dark:border-white/15"
                     >
+                      <SkillIcon icon={skill.icon} />
                       {skill.name}
                     </span>
                   ))}

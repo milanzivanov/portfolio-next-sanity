@@ -18,9 +18,30 @@ export const skillType = defineType({
     }),
     defineField({
       name: "icon",
-      type: "image",
+      type: "string",
       title: "Icon",
-      options: { hotspot: true }
+      description: "Technology logo shown next to the skill name on the site.",
+      options: {
+        list: [
+          { title: "React", value: "react" },
+          { title: "Next.js", value: "nextdotjs" },
+          { title: "TypeScript", value: "typescript" },
+          { title: "JavaScript", value: "javascript" },
+          { title: "Tailwind CSS", value: "tailwindcss" },
+          { title: "HTML5", value: "html5" },
+          { title: "CSS3", value: "css3" },
+          { title: "Node.js", value: "nodedotjs" },
+          { title: "Sanity", value: "sanity" },
+          { title: "Supabase", value: "supabase" },
+          { title: "Prisma", value: "prisma" },
+          { title: "Clerk", value: "clerk" },
+          { title: "Git", value: "git" },
+          { title: "GitHub", value: "github" },
+          { title: "Figma", value: "figma" },
+          { title: "Vercel", value: "vercel" },
+          { title: "AI / ML", value: "ai" }
+        ]
+      }
     }),
     defineField({
       name: "level",

@@ -41,7 +41,8 @@ export const PROJECTS_SLUGS_QUERY =
 export const SKILLS_QUERY = defineQuery(`
   *[_type == "skill"] | order(name asc) {
     _id,
-    name
+    name,
+    icon
   }
 `);
 
