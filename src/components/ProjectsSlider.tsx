@@ -56,7 +56,7 @@ function SlideContent({ project }: { project: Project }) {
           fill
           sizes="(min-width: 768px) 58vw, 84vw"
           alt={mainImage.alt || title || ""}
-          className="object-cover"
+          className="object-contain object-center"
         />
       ) : null}
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
