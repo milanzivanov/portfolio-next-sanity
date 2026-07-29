@@ -4,6 +4,7 @@ import { Author } from "@/components/Author";
 import { Categories } from "@/components/Categories";
 import { PROJECTS_QUERYResult } from "@/sanity/types";
 import { PublishedAt } from "@/components/PublishedAt";
+import { SkillIcon } from "@/components/SkillIcon";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,12 +67,14 @@ export function ProjectCard(
             {title}
           </h2>
           {technologies && technologies.length > 0 && (
-            <p className="label-mono text-black/40 dark:text-white/40">
-              {technologies
-                .map((tech) => tech.name)
-                .filter(Boolean)
-                .join(" · ")}
-            </p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 label-mono text-black/40 dark:text-white/40">
+              {technologies.map((tech) => (
+                <span key={tech._id} className="inline-flex items-center gap-1.5">
+                  <SkillIcon icon={tech.icon} />
+                  {tech.name}
+                </span>
+              ))}
+            </div>
           )}
           <div className="flex items-center gap-x-6 pt-1">
             <Author author={author} />
