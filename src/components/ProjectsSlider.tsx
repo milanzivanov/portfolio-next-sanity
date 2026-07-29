@@ -130,7 +130,7 @@ export function ProjectsSlider({ projects }: { projects: PROJECTS_QUERYResult })
         touchStartX.current = null;
       }}
     >
-      <div className="relative h-[380px] sm:h-[420px] md:h-[480px] xl:h-[520px]">
+      <div className="relative h-[380px] overflow-hidden sm:h-[420px] md:h-[480px] xl:h-[520px]">
         {projects.map((project, index) => {
           const offset = wrappedOffset(index, active, count);
           const isCenter = offset === 0;
