@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectsSlider } from "@/components/ProjectsSlider";
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
-import RevealOnScroll from "@/components/RevealOnScroll";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -105,9 +104,9 @@ export default async function HomePage() {
         id="portfolio"
         className="w-full bg-white dark:bg-black scroll-mt-[92px] border-t border-black/8 dark:border-white/8"
       >
-        <div className="container mx-auto px-6 md:px-10 py-20">
+        <div className="py-20">
           {/* section label — DESIGN.md: monospace uppercase */}
-          <div className="mb-12 text-center">
+          <div className="container mx-auto mb-12 px-6 text-center md:px-10">
             <p className="label-mono text-black/40 dark:text-white/40 mb-4">
               Selected Work
             </p>
@@ -121,13 +120,7 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <RevealOnScroll key={project._id} delay={index * 80}>
-                <ProjectCard {...project} priority={index === 0} />
-              </RevealOnScroll>
-            ))}
-          </div>
+          <ProjectsSlider projects={projects} />
         </div>
       </section>
 
