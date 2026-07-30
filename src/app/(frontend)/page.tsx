@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectBanner } from "@/components/ProjectBanner";
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
 import Footer from "@/components/Footer";
@@ -105,7 +105,7 @@ export default async function HomePage() {
         id="portfolio"
         className="w-full bg-white dark:bg-black scroll-mt-[92px] border-t border-black/8 dark:border-white/8"
       >
-        <div className="container mx-auto px-6 md:px-10 py-20">
+        <div className="max-w-5xl md:max-w-3xl xl:max-w-5xl mx-auto px-6 md:px-10 py-20">
           {/* section label — DESIGN.md: monospace uppercase */}
           <div className="mb-12 text-center">
             <p className="label-mono text-black/40 dark:text-white/40 mb-4">
@@ -121,10 +121,10 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-6">
             {projects.map((project, index) => (
               <RevealOnScroll key={project._id} delay={index * 80}>
-                <ProjectCard {...project} priority={index === 0} />
+                <ProjectBanner {...project} index={index} priority={index === 0} />
               </RevealOnScroll>
             ))}
           </div>
