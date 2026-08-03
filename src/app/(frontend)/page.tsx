@@ -121,7 +121,7 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-22">
             {projects.map((project, index) => (
               <RevealOnScroll key={project._id} delay={index * 80}>
                 <ProjectBanner {...project} index={index} priority={index === 0} />
