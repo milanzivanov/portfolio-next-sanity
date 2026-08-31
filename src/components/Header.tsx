@@ -25,7 +25,7 @@ export default function Header({ isAdmin }: { isAdmin: boolean }) {
 
   return (
     <header
-      className={`fixed z-50 h-18 md:h-14 xl:h-20 max-w-5xl md:max-w-3xl xl:max-w-5xl mx-auto inset-0 px-5 rounded-bl-2xl rounded-br-2xl backdrop-blur-xl border-b flex items-center transition-colors duration-300 ease-out ${
+      className={`fixed z-50 h-18 md:h-14 xl:h-20 max-w-5xl md:max-w-3xl xl:max-w-5xl mx-auto top-0 inset-x-0 px-5 rounded-bl-2xl rounded-br-2xl backdrop-blur-xl border-b flex items-center transition-colors duration-300 ease-out ${
         scrolled
           ? "bg-white/90 dark:bg-white/50 border-black/8 dark:border-white/20"
           : "bg-transparent border-transparent"
